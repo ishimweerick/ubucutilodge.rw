@@ -54,8 +54,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3>Get in touch</h3>
-                                    <form action="send-message.php" method="POST">
-                                        <!-- form message -->
+                                    <form action="./send-message.php" method="POST">
+                                    <!-- form message -->
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your message was sent successfully. </div>
