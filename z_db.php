@@ -1,11 +1,11 @@
 <?php
-$con = new mysqli("localhost", "root", "", "new_dbubucuti");
+$con = new mysqli("localhost", "lodgeuser", "1UEO^p}XO)Qn", "ubucuti_lodgedb");
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
 //Your Website URL Goes Here
-$url="http://localhost/newubucuti.rw";
+$url="https://ubucutilodge.rw/";
 
 
 //Set Blog Activation Bonus Here (It must be only Number)
