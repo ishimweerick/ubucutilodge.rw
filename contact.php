@@ -54,36 +54,37 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3>Get in touch</h3>
-                                    <form method="post" class="contact-form">
-    <!-- form message -->
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your message was sent successfully. </div>
-        </div>
-    </div>
-    <!-- form elements -->
-    <div class="row">
-        <div class="col-md-6 form-group">
-            <input name="name" type="text" placeholder="Your Name *" required>
-        </div>
-        <div class="col-md-6 form-group">
-            <input name="email" type="email" placeholder="Your Email *" required>
-        </div>
-        <div class="col-md-6 form-group">
-            <input name="phone" type="text" placeholder="Your Number *" required>
-        </div>
-        <div class="col-md-6 form-group">
-            <input name="subject" type="text" placeholder="Subject *" required>
-        </div>
-        <div class="col-md-12 form-group">
-            <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
-        </div>
-        <div class="col-md-12 mt-10">
-            <input type="submit" name="submit" class="butn-dark2" value="Send Message">
-        </div>
-    </div>
-</form>
+                                    <form mclass="contact-from" action="mail.php" method="post">
 
+                                        <!-- form message -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your message was sent successfully. </div>
+                                            </div>
+                                        </div>
+                                        <!-- form elements -->
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <input name="name" type="text" placeholder="Your Name *" required>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="email" type="email" placeholder="Your Email *" required>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="phone" type="text" placeholder="Your Number *" required>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="subject" type="text" placeholder="Subject *" required>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Write something.." required></textarea>
+                                            </div>
+                                            <div class="col-md-12 mt-10">
+                                            <input type="submit"  class="butn-dark2" value="Send Message">
+
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -92,38 +93,6 @@
             </div>
         </div>
     </section>
-
-    <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
-
-    // Email details
-    $to = 'clapton955@gmail.com';
-    $email_subject = "Contact Form: $subject";
-    $email_body = "You have received a new message from the contact form.\n\n".
-                  "Name: $name\n".
-                  "Email: $email\n".
-                  "Phone: $phone\n".
-                  "Subject: $subject\n".
-                  "Message:\n$message";
-
-    $headers = "From: $email\n";
-    $headers .= "Reply-To: $email";
-
-    // Send email
-    if (mail($to, $email_subject, $email_body, $headers)) {
-        echo "<script>alert('Your message was sent successfully.');</script>";
-    } else {
-        echo "<script>alert('There was an error sending your message. Please try again later.');</script>";
-    }
-}
-?>
-
     <!-- Map -->
         <section class="map">
             <div class="full-width">
