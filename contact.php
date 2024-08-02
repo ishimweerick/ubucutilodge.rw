@@ -54,8 +54,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h3>Get in touch</h3>
-                                    <form mclass="contact-from" action="mail.php" method="post">
-
+                                    <form action="send-message.php" method="POST">
                                         <!-- form message -->
                                         <div class="row">
                                             <div class="col-12">
@@ -80,7 +79,7 @@
                                                 <textarea name="message" id="message" cols="30" rows="4" placeholder="Write something.." required></textarea>
                                             </div>
                                             <div class="col-md-12 mt-10">
-                                            <input type="submit"  class="butn-dark2" value="Send Message">
+                                            <button type="submit" class="butn-dark2">Send Message -></button>
 
                                             </div>
                                         </div>
