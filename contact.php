@@ -1,43 +1,69 @@
 <?php include "include/header.php";?>
-<?php 
-		if(isset($_POST['sendmail'])) {
-			require 'PHPMailerAutoload.php';
-			require 'credential.php';
+<?php
+           $status = "OK"; //initial status
+$msg="";
+           if(ISSET($_POST['save'])){
+$name = mysqli_real_escape_string($con,$_POST['name']);
+$email = mysqli_real_escape_string($con,$_POST['email']);
+$phone = mysqli_real_escape_string($con,$_POST['phone']);
+$message = mysqli_real_escape_string($con,$_POST['message']);
 
-			$mail = new PHPMailer;
+ if ( strlen($name) < 5 ){
+$msg=$msg."Name Must Be More Than 5 Char Length.<BR>";
+$status= "NOTOK";}
+ if ( strlen($email) < 9 ){
+$msg=$msg."Email Must Be More Than 10 Char Length.<BR>";
+$status= "NOTOK";}
+if ( strlen($message) < 10 ){
+    $msg=$msg."Message Must Be More Than 10 Char Length.<BR>";
+    $status= "NOTOK";}
 
-			// $mail->SMTPDebug = 4;                               // Enable verbose debug output
+if ( strlen($phone) < 8 ){
+  $msg=$msg."Phone Must Be More Than 8 Char Length.<BR>";
+  $status= "NOTOK";}
 
-			$mail->isSMTP();                                      // Set mailer to use SMTP
-			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = EMAIL;                 // SMTP username
-			$mail->Password = PASS;                           // SMTP password
-			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-			$mail->Port = 587;                                    // TCP port to connect to
+  if($status=="OK")
+  {
 
-			$mail->setFrom(EMAIL, 'Dsmart Tutorials');
-			$mail->addAddress($_POST['email']);     // Add a recipient
+$recipient="clapon955@gmail.com";
 
-			$mail->addReplyTo(EMAIL);
-			// print_r($_FILES['file']); exit;
-			for ($i=0; $i < count($_FILES['file']['tmp_name']) ; $i++) { 
-				$mail->addAttachment($_FILES['file']['tmp_name'][$i], $_FILES['file']['name'][$i]);    // Optional name
-			}
-			$mail->isHTML(true);                                  // Set email format to HTML
+$formcontent="NAME:$name \n EMAIL: $email  \n PHONE: $phone  \n MESSAGE: $message";
 
-			$mail->Subject = $_POST['subject'];
-			$mail->Body    = '<div style="border:2px solid red;">This is the HTML message body <b>in bold!</b></div>';
-			$mail->AltBody = $_POST['message'];
+$subject = "New Enquiry from Vogue Website";
+$mailheader = "From: clapon955@gmail.com \r\n";
+$result= mail($recipient, $subject, $formcontent);
 
-			if(!$mail->send()) {
-			    echo 'Message could not be sent.';
-			    echo 'Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-			    echo 'Message has been sent';
-			}
-		}
-	 ?>
+          if($result){
+                  $errormsg= "
+  <div class='alert alert-success alert-dismissible alert-outline fade show'>
+                   Enquiry Sent Successfully. We shall get back to you ASAP.
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>
+   "; //printing error if found in validation
+
+          }
+      }
+
+          elseif ($status!=="OK") {
+              $errormsg= "
+  <div class='alert alert-danger alert-dismissible alert-outline fade show'>
+                       ".$msg." <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button> </div>"; //printing error if found in validation
+
+
+      }
+      else{
+              $errormsg= "
+        <div class='alert alert-danger alert-dismissible alert-outline fade show'>
+                   Some Technical Glitch Is There. Please Try Again Later Or Ask Admin For Help.
+                   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                   </div>"; //printing error if found in validation
+
+
+          }
+             }
+             ?>
+
+
     <!-- Header Banner -->
     <div class="banner-header section-padding valign bg-img bg-fixed bg-position-bottom" data-overlay-dark="5" data-background="dashboard/uploads/about/<?php print $about_banner;?>">
         <div class="container">
@@ -92,9 +118,14 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3>Get in touch</h3>
-                                    <form role="form" method="post" enctype="multipart/form-data">
+                                    <h3>Get in touch</h3><?php
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+						{
+						print $errormsg;
+						}
+   ?>
 
+                                    <form action="" method="post" enctype="multipart/form-data">
                                     <!-- form message -->
                                         <div class="row">
                                             <div class="col-12">
@@ -119,7 +150,7 @@
                                                 <textarea name="message" id="message" cols="30" rows="4" placeholder="Write something.." required></textarea>
                                             </div>
                                             <div class="col-md-12 mt-10">
-                                            <button type="submit" name="sendmail" class="butn-dark2">Send Message -></button>
+                                            <button type="submit" class="butn-dark2" name="save"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>Send Message -></button>
 
                                             </div>
                                         </div>
