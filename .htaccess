@@ -1,0 +1,15 @@
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule    ^home/?$    index.php    [NC,L]
+RewriteRule    ^about/?$    about.php    [NC,L]
+RewriteRule    ^our-team/?$    team.php    [NC,L]
+RewriteRule    ^restaurant/?$    restaurant.php    [NC,L]
+RewriteRule    ^wellness/?$    wellness.php    [NC,L]
+RewriteRule    ^contact/?$    contact.php    [NC,L]
+RewriteRule    ^gallery/?$    gallery.php    [NC,L]
+RewriteRule    ^accomodation/?$    rooms.php    [NC,L]
+RewriteRule    ^valentine/?$    valentine.php    [NC,L]
+RewriteRule    ^eastern/?$    eastern.php    [NC,L]
+RewriteRule    ^mothersday/?$    mothersday.php    [NC,L]
+RewriteRule    ^fathersday/?$    fathersday.php    [NC,L]
+RewriteRule    ^amenities/?$    amenities.php    [NC,L]
