@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const file = this.getAttribute('data-file');
             if (confirm('Are you sure you want to delete this image?')) {
-                fetch('delete_image.php', {
+                fetch('delete_gallery.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',

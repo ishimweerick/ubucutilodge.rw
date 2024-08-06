@@ -138,9 +138,9 @@ $ufile = $r[0];
                                     <li class="nav-item">
                                         <a href="createportfolio" class="nav-link" data-key="t-one-page"> Add New </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a href="portfolio" class="nav-link" data-key="t-nft-landing"> Portfolio List </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>
