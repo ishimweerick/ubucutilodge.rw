@@ -37,7 +37,7 @@
                             <ul class="footer-explore-list list-unstyled">
                             <?php
       
-      $result = mysqli_query($con,"SELECT * FROM `packages` ORDER BY `packages`.`id` DESC");
+      $result = mysqli_query($con,"SELECT * FROM `packages` ORDER BY `packages`.`order` ASC");
       if (mysqli_num_rows($result) > 0) {
 $i=0;
 while($row = mysqli_fetch_array($result)) {
