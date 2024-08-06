@@ -28,7 +28,7 @@ if (isset($_SESSION['username'])) {
 
 ?>
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-layout-mode="dark" data-sidebar-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg" data-layout-mode="light" data-sidebar-image="none">
 
 
 <head>
