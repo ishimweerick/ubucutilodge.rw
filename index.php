@@ -95,7 +95,7 @@ echo "No Slide found";
                                     <div class="reservations mb-15">
                                     <div class="icon"><span class="flaticon-location-pin"></span></div>
                                     <div class="text">
-                                            <p>Ubucuti Lodge</p>9.4</a>
+                                            <p>Ubucuti Lodge</p>9.5</a>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ echo "No Slide found";
                                     <div class="reservations mb-15">
                                     <div class="icon"><span class="flaticon-location-pin"></span></div>
                                     <div class="text">
-                                            <p>ELake Kivu Serena Hotel</p> 8.3</a>
+                                            <p>Lake Kivu Serena Hotel</p> 8.3</a>
                                         </div>
                                     </div>
                                 </div>
