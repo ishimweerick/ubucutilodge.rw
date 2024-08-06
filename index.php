@@ -333,17 +333,10 @@ if (window.matchMedia("(min-width:576px)").matches) {
                     <div class="col-md-3">
                         <h3 class="sub-title border-bot-dark">Testiominals</h3>
                     </div>
-                    <div class="col-md-8">
-                        <div class="section-title whte">Guest Feedback</div>
-                        <div class="testimonials-box">
-                        <div class="owl-carousel owl-theme">
 
 
 
-
-
-
-                        <div class="container-fluid bg-body-tertiary py-3">
+                    <div class="container-fluid bg-body-tertiary py-3">
   <div id="testimonialCarousel" class="carousel">
     <div class="carousel-inner">
     <?php
@@ -392,6 +385,17 @@ echo "No Slide found";
     </button>
   </div>
 </div>
+
+
+
+                    <div class="col-md-8">
+                        <div class="section-title whte">Guest Feedback</div>
+                        <div class="testimonials-box">
+                        <div class="owl-carousel owl-theme">
+
+
+
+
 
 
                         
