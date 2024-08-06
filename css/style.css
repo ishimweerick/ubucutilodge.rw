@@ -5821,7 +5821,7 @@ font-size: 15px;
   z-index: 1;
 }
 [data-overlay-dark]:before {
-  background: #0000004f;
+  /* background: #0000004f; */
 }
 [data-overlay-light]:before {
   background: #fff;
