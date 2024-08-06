@@ -3,17 +3,15 @@ include "header.php";
 include "sidebar.php";
 include "include/db_connection.php"; // Adjust path as needed
 
-$status = "OK"; // Initial status
-$msg = "";
-$errormsg = "";
-
+// Handle file uploads
 if (isset($_POST['save'])) {
     $destination = mysqli_real_escape_string($con, $_POST['destination']);
     $uploads_dir = 'uploads/portfolio';
 
-    // Process each uploaded file
     if (isset($_FILES['ufiles'])) {
         $files = $_FILES['ufiles'];
+        $status = "OK";
+        $msg = "";
 
         for ($i = 0; $i < count($files['name']); $i++) {
             $tmp_name = $files["tmp_name"][$i];
@@ -55,6 +53,9 @@ if (isset($_POST['save'])) {
             </div>";
     }
 }
+
+// Fetch images from database
+$result = mysqli_query($con, "SELECT * FROM portfolio");
 ?>
 
 <div class="main-content">
@@ -77,6 +78,7 @@ if (isset($_POST['save'])) {
             <!-- end page title -->
 
             <div class="row">
+                <!-- Add Portfolio Form -->
                 <div class="col-xxl-9">
                     <div class="card mt-xxl-n5">
                         <div class="card-header">
@@ -150,8 +152,65 @@ if (isset($_POST['save'])) {
                     </div>
                 </div>
             </div>
+
+            <!-- Display Gallery -->
+            <div class="row mt-4">
+                <?php if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        $portfolio = $row['ufile'];
+                        ?>
+                        <div class="col-md-4 gallery-item">
+                            <div class="img-card">
+                                <a href="uploads/portfolio/<?php echo $portfolio; ?>" title="" class="img-zoom">
+                                    <div class="img-block">
+                                        <div class="wrapper-img">
+                                            <img src="uploads/portfolio/<?php echo $portfolio; ?>" class="img-fluid mx-auto d-block" alt="work-img" width="380px" height="237.33px">
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="btn btn-danger btn-sm delete-btn" data-file="<?php echo $portfolio; ?>">Delete</button>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "<p>No images found.</p>";
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const file = this.getAttribute('data-file');
+            if (confirm('Are you sure you want to delete this image?')) {
+                fetch('delete_image.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'file': file
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'Success') {
+                        location.reload();
+                    } else {
+                        alert('Failed to delete image.');
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 
 <?php include "footer.php"; ?>
