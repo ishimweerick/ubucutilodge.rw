@@ -400,45 +400,7 @@ echo "No Slide found";
 
                         
 
-
-
-
-
-                        
-                        <?php
-            $result = mysqli_query($con,"SELECT * FROM testimony");
-if (mysqli_num_rows($result) > 0) {
-    $i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-                    
-                                <div class="item"> <span>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                    </span>
-                                    <h5>"<?php echo $row["message"]; ?>"</h5>
-                                    <!-- <div class="info">
-                                        <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
-                                        <div class="cont">
-                                            <h6><?php echo $row["name"]; ?></h6> <span>Customer Review</span>
-                                        </div>
-                                    </div> -->
-                                </div>
-                               
-                       
-
-                            <?php
-            
-            $i++;
-            }
-}
-else{
-echo "No Slide found";
-}
-?>     </div>
+    </div>
                         </div>
                     </div>
                 </div>
