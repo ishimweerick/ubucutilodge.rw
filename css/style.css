@@ -5845,7 +5845,7 @@ font-size: 15px;
   color: #3b3b3b;
 }
 [data-overlay-dark] p {
-  color: #fff;
+  color: #000;
 }
 [data-overlay-light] p {
   color: #3b3b3b;
