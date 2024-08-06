@@ -42,6 +42,7 @@ while($row = mysqli_fetch_array($result)) {
                                 </span>
                                 <!-- <h4>Resort & Spa Hotel</h4> -->
                                 <h1><?php echo $row["slide_title"]; ?></h1>
+                                <h4><?php echo $row["slide_text"]; ?></h4>
                                 <!-- <div class="butn-light mt-30 mb-30"> <a href="index.html#"><span>Explore More</span></a> </div> -->
                             </div>
                         </div>
