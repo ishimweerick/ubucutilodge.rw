@@ -140,7 +140,7 @@ echo "No Slide found";
             return (date('N', strtotime($date)) >= 6);
         }
 
-        $result = mysqli_query($con, "SELECT * FROM `packages`  ORDER BY package_title ASC");
+        $result = mysqli_query($con, "SELECT * FROM `packages` ORDER BY `packages`.`order` ASC");
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
                 // Determine the price based on the current day
