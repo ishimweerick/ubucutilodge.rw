@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "Invalid request method.";
 }
 ?>
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
     const deleteButtons = document.querySelectorAll('.delete-btn');
 
@@ -59,4 +59,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
     });
 });
-</script>
+</script> -->
