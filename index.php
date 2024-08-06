@@ -220,57 +220,6 @@ echo "No Slide found";
 
 
 
-    <div class="container-fluid bg-body-tertiary py-3">
-  <div id="testimonialCarousel" class="carousel">
-    <div class="carousel-inner">
-    <?php
-            $result = mysqli_query($con,"SELECT * FROM testimony");
-if (mysqli_num_rows($result) > 0) {
-    $i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><?php echo $row["message"]; ?></p>
-            <div class="d-flex align-items-center pt-2">
-              <div>
-                <h5 class="card-title fw-bold"><?php echo $row["name"]; ?></h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <?php
-            
-            $i++;
-            }
-}
-else{
-echo "No Slide found";
-}
-?> 
-
-
-
-
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-
 
     <style>
         .carousel img {
@@ -392,6 +341,57 @@ if (window.matchMedia("(min-width:576px)").matches) {
 
 
 
+
+
+                        <div class="container-fluid bg-body-tertiary py-3">
+  <div id="testimonialCarousel" class="carousel">
+    <div class="carousel-inner">
+    <?php
+            $result = mysqli_query($con,"SELECT * FROM testimony");
+if (mysqli_num_rows($result) > 0) {
+    $i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
+      <div class="carousel-item">
+        <div class="card shadow-sm rounded-3">
+          <div class="quotes display-2 text-body-tertiary">
+            <i class="bi bi-quote"></i>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><?php echo $row["message"]; ?></p>
+            <div class="d-flex align-items-center pt-2">
+              <div>
+                <h5 class="card-title fw-bold"><?php echo $row["name"]; ?></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <?php
+            
+            $i++;
+            }
+}
+else{
+echo "No Slide found";
+}
+?> 
+
+
+
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 
 
                         
