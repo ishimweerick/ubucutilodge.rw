@@ -350,7 +350,7 @@ while($row = mysqli_fetch_array($result)) {
           <div class="quotes display-2 text-body-tertiary">
             <i class="bi bi-quote"></i>
           </div>
-          <div class="card-body">
+          <div class="card-body" style="color:#fff">
             <p class="card-text"><?php echo $row["message"]; ?></p>
             <div class="d-flex align-items-center pt-2">
               <div>
