@@ -214,7 +214,9 @@ echo "No Slide found";
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 
-
+    <div class="col-md-3">
+                        <h3 class="sub-title border-bot-dark">Reviews</h3>
+                    </div>
 
 
 
@@ -233,14 +235,11 @@ while($row = mysqli_fetch_array($result)) {
             <i class="bi bi-quote"></i>
           </div>
           <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
+            <p class="card-text"><?php echo $row["message"]; ?></p>
             <div class="d-flex align-items-center pt-2">
               <img src="https://codingyaar.com/wp-content/uploads/square-headshot-2.png" alt="bootstrap testimonial carousel slider 2">
               <div>
-                <h5 class="card-title fw-bold">June Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
+                <h5 class="card-title fw-bold"><?php echo $row["name"]; ?></h5>
               </div>
             </div>
           </div>
@@ -260,37 +259,6 @@ echo "No Slide found";
 
 
 
-
-      <?php
-            $result = mysqli_query($con,"SELECT * FROM testimony");
-if (mysqli_num_rows($result) > 0) {
-    $i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-    <div class="carousel-item active">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><?php echo $row["message"]; ?></p>
-           
-                <h5 class="card-title fw-bold"><?php echo $row["name"]; ?></h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php
-            
-            $i++;
-            }
-}
-else{
-echo "No Slide found";
-}
-?>   
-
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -302,10 +270,6 @@ echo "No Slide found";
     </button>
   </div>
 </div>
-
-<p class="mt-5 text-center">Get a step-by-step written explanation here: <a href="https://codingyaar.com/bootstrap-5-testimonial-carousel-slider-2" target="_blank">Bootstrap 5 Testimonial Slider #2</a> </p>
-
-<p class="mt-2 text-center">Get a step-by-step video explanation here: <a href="https://youtu.be/KrIJD3oc0oM" target="_blank">Bootstrap 5 Testimonial Carousel Slider</a> </p>
 
 
 
