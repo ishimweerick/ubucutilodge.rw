@@ -236,9 +236,7 @@ while($row = mysqli_fetch_array($result)) {
           </div>
           <div class="card-body">
             <p class="card-text"><?php echo $row["message"]; ?></p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/square-headshot-2.png" alt="bootstrap testimonial carousel slider 2">
-              <div>
+           
                 <h5 class="card-title fw-bold"><?php echo $row["name"]; ?></h5>
               </div>
             </div>
