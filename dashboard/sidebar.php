@@ -112,19 +112,19 @@ $ufile = $r[0];
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarpackage" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarpackage">
-                                <i class="ri-checkbox-multiple-line"></i> <span data-key="t-landing">Manage Packages</span>
+                                <i class="ri-checkbox-multiple-line"></i> <span data-key="t-landing">Manage Room</span>
                             </a>
                             <div class="menu-dropdown collapse" id="sidebarpackage" style="">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="createpackage" class="nav-link" data-key="t-one-page"> Add Package </a>
+                                        <a href="createpackage" class="nav-link" data-key="t-one-page"> Add Room </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="packages" class="nav-link" data-key="t-nft-landing"> Packages List </a>
-                                    </li>
+                                        <a href="packages" class="nav-link" data-key="t-nft-landing"> Room List </a>
+                                    <!-- </li>
                                     <li class="nav-item">
-                                        <a href="bookings" class="nav-link" data-key="t-nft-landing"> Packages Bookings </a>
-                                    </li>
+                                        <a href="bookings" class="nav-link" data-key="t-nft-landing"> Room Bookings </a>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>

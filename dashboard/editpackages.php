@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 include "sidebar.php";
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 $todo = mysqli_real_escape_string($con, $_GET['id']);
 
 // Fetch package details
