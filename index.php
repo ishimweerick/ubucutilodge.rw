@@ -210,6 +210,289 @@ echo "No Slide found";
     </section>
    
     <!-- Testiominals -->
+
+
+ 
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol viewBox="0 0 43.763 23.214">
+            <g id="arrow-left" transform="translate(2.886 2.823)">
+                <line id="Line_183" data-name="Line 183" x1="38.495" transform="translate(0.382 8.862)" fill="none"
+                    stroke-linecap="round" stroke-miterlimit="10" stroke-width="4" />
+                <line id="Line_184" data-name="Line 184" y1="8.205" x2="9.256" transform="translate(0.382 0)"
+                    fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4" />
+                <line id="Line_185" data-name="Line 185" x2="10" y2="9" transform="translate(-0.062 8.566)" fill="none"
+                    stroke-linecap="round" stroke-miterlimit="10" stroke-width="4" />
+            </g>
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 400.004 400.004" style="enable-background:new 0 0 400.004 400.004;"
+            xml:space="preserve">
+            <g>
+                <path d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757
+            c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072
+            c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315
+            C400.004,190.438,392.251,182.686,382.688,182.686z" />
+            </g>
+        </symbol>
+    </svg>
+
+<section class="half-color-box">
+        <div class="container spacer por">
+            <div class="text-whtie text-center ml-3">
+                <h1 class="bold">What Clients Say</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, at!
+                </p>
+            </div>
+            <div class="test-arrowbox">
+
+                <div class="swiper-button-prev-test">
+                    <svg fill="red" height="34" class="arrow left">
+                        <use xlink:href="#arrow" />
+                    </svg>
+                </div>
+                <div class="swiper-button-next-test">
+                    <div class="arrow-right">
+                        <svg fill="red" height="60" width="60" class="arrow">
+                            <use xlink:href="#arrow" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-container swiper-testimonial">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <div class="media">
+                                <img class="mr-3" src="https://picsum.photos/50/50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5>Amanda Jackson</h5>
+                                    <p class="user-post">CEO, NRD Group</p>
+                                </div>
+                            </div>
+                            <p class="read">
+                                It has survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the race.
+                            </p>
+                            <img class="quote" src="img/icons/quote.svg" alt="">
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <div class="media">
+                                <img class="mr-3" src="https://picsum.photos/50/50/" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5>Amanda Jackson</h5>
+                                    <p class="user-post">CEO, NRD Group</p>
+                                </div>
+                            </div>
+                            <p class="read">
+                                It has survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the race.
+                            </p>
+                            <img class="quote" src="img/icons/quote.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <div class="media">
+                                <img class="mr-3" src="https://picsum.photos/50/50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5>Amanda Jackson</h5>
+                                    <p class="user-post">CEO, NRD Group</p>
+                                </div>
+                            </div>
+                            <p class="read">
+                                It has survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the race.
+                            </p>
+                            <img class="quote" src="img/icons/quote.svg" alt="">
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <div class="media">
+                                <img class="mr-3" src="img/icons/user.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5>Amanda Jackson</h5>
+                                    <p class="user-post">CEO, NRD Group</p>
+                                </div>
+                            </div>
+                            <p class="read">
+                                It has survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the race.
+                            </p>
+                            <img class="quote" src="img/icons/quote.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        :root {
+  --theme-color: #3950ca;
+  --bg-color: rgba(79, 48, 183, 0.06);
+  --comp-color: #ff6584;
+  --gradient: linear-gradient(#6a5fdd 0%, #241d8c 100%);
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap');
+body {
+     font-family: 'Poppins', sans-serif;
+  margin:0;
+  pading:0
+}
+.text-center {
+  text-align:center;
+  
+}
+h2,h1 {
+  margin:0;
+  padding-top:30px;
+}
+
+.bg-color {
+  background: var(--bg-color);
+}
+
+.half-color-box {
+  background: var(--gradient);
+  height: 300px;
+  margin-bottom: 100px;
+}
+
+.text-whtie {
+  color: #fff !important;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.por {
+  position: relative;
+}
+
+.review-box .quote {
+  position: absolute;
+  width: 40px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.test-arrowbox {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  top: 70px;
+}
+
+.review-box {
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.review-box h5 {
+  margin: 0;
+}
+
+.review-box p {
+  margin-bottom: 0;
+  margin-top: 10px;
+  color: #7d8597;
+}
+
+.user-post {
+  font-size: 14px;
+  margin: 0 !important;
+ 
+}
+
+.swiper-testimonial {
+  padding: 100px 20px;
+  padding-top: 30px;
+}
+
+.half-color-box {
+  background: var(--gradient);
+  height: 300px;
+  margin-bottom: 140px;
+}
+
+.test-arrowbox .swiper-button-next-test,
+.test-arrowbox .swiper-button-prev-test {
+  margin-right: 20px;
+  /* background: var(--comp-color);2 */
+  border-radius: 50%;
+  --size: 55px;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-right {
+  transform: rotate(180deg);
+  margin-top: -8px;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.arrow:hover {
+  transform: translateX(-15px);
+}
+</style>
+<script>
+    var swiper = new Swiper('.swiper-container.swiper-testimonial', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next-test',
+        prevEl: '.swiper-button-prev-test',
+    },
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="testimonials">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
             <div class="container">
@@ -227,277 +510,12 @@ echo "No Slide found";
 
 
 
-                        <div class="container-fluid bg-body-tertiary py-3">
-  <div id="testimonialCarousel" class="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/square-headshot-1.png" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">Jane Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/square-headshot-2.png" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">June Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card shadow-sm rounded-3">
-          <div class="quotes display-2 text-body-tertiary">
-            <i class="bi bi-quote"></i>
-          </div>
-          <div class="card-body">
-            <p class="card-text">"Some quick example text to build on the card title and make up the
-              bulk of
-              the card's content."</p>
-            <div class="d-flex align-items-center pt-2">
-              <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg" alt="bootstrap testimonial carousel slider 2">
-              <div>
-                <h5 class="card-title fw-bold">John Doe</h5>
-                <span class="text-secondary">CEO, Example Company</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-<p class="mt-5 text-center">Get a step-by-step written explanation here: <a href="https://codingyaar.com/bootstrap-5-testimonial-carousel-slider-2" target="_blank">Bootstrap 5 Testimonial Slider #2</a> </p>
-
-<p class="mt-2 text-center">Get a step-by-step video explanation here: <a href="https://youtu.be/KrIJD3oc0oM" target="_blank">Bootstrap 5 Testimonial Carousel Slider</a> </p>
+                        
 
 
 
-<style>
-.carousel img {
-  width: 70px;
-  max-height: 70px;
-  border-radius: 50%;
-  margin-right: 1rem;
-  overflow: hidden;
-}
-.carousel-inner {
-  padding: 1em;
-}
 
-@media screen and (min-width: 576px) {
-  .carousel-inner {
-    display: flex;
-    width: 90%;
-    margin-inline: auto;
-    padding: 1em 0;
-    overflow: hidden;
-  }
-  .carousel-item {
-    display: block;
-    margin-right: 0;
-    flex: 0 0 calc(100% / 2);
-  }
-}
-@media screen and (min-width: 768px) {
-  .carousel-item {
-    display: block;
-    margin-right: 0;
-    flex: 0 0 calc(100% / 3);
-  }
-}
-.carousel .card {
-  margin: 0 0.5em;
-  border: 0;
-}
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 3rem;
-  height: 3rem;
-  background-color: grey;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-</style>
-<script>
-    const multipleItemCarousel = document.querySelector("#testimonialCarousel");
-
-if (window.matchMedia("(min-width:576px)").matches) {
-  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
-    interval: false
-  });
-
-  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-  var cardWidth = $(".carousel-item").width();
-
-  var scrollPosition = 0;
-
-  $(".carousel-control-next").on("click", function () {
-    if (scrollPosition < carouselWidth - cardWidth * 3) {
-      console.log("next");
-      scrollPosition = scrollPosition + cardWidth;
-      $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 800);
-    }
-  });
-  $(".carousel-control-prev").on("click", function () {
-    if (scrollPosition > 0) {
-      scrollPosition = scrollPosition - cardWidth;
-      $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 800);
-    }
-  });
-} else {
-  $(multipleItemCarousel).addClass("slide");
-}
-</script>
                         
                         <?php
             $result = mysqli_query($con,"SELECT * FROM testimony");
