@@ -3,8 +3,7 @@
     <header class="header slider">
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="4" data-background="img/restaurant/2.jpg"></div>
-            <div class="text-center item bg-img" data-overlay-dark="4" data-background="img/restaurant/1.jpg"></div>
+            <div class="text-center item bg-img" data-overlay-dark="4" data-background="img/restaurant/jocks_74.jpg"></div>
         </div>
         <!-- button scroll -->
         <a href="restaurant.html#" data-scroll-nav="1" class="mouse smoothscroll"> <span class="mouse-icon">
