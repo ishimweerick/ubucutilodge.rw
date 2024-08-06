@@ -157,7 +157,6 @@ echo "No Slide found";
                     <div class="rooms1-title">
                     <a href="room-details.php?id=<?php echo $row["id"]; ?>"><?php echo htmlspecialchars($row['package_title']); ?></a>
                     </div>
-                    <div class="rooms1-tagline">30 m<sup>2</sup> / 2 adults 1 child</div>
                 </div>
                 <div class="col-md-6">
                     <div class="book">
