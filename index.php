@@ -315,7 +315,7 @@ echo "No result found";
 
    <!-- Testiominals -->
    <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/18.jpg" data-overlay-dark="4">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="dashboard/uploads/about/<?php print $about_banner;?>" data-overlay-dark="4">
             <div class="container">
                 <div class="row">
                   
