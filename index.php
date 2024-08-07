@@ -480,6 +480,11 @@ echo "No result found";
    
 
 
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <section class="testimonial-area">
 	<div class="container">
 		<div class="sec-title white-title">
