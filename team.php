@@ -1,6 +1,6 @@
 <?php include "include/header.php";?>
     <!-- Header Banner -->
-    <div class="banner-header section-padding valign bg-img bg-fixed bg-position-bottom" data-overlay-dark="4" data-background="dashboard/uploads/banner/<?php print $banner_image;?>">
+    <div class="banner-header section-padding valign bg-img bg-fixed bg-position-bottom" data-overlay-dark="4" data-background="dashboard/uploads/portfolio/9499Radiant_Memory-2359.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center caption">
