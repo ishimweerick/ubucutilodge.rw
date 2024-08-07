@@ -44,7 +44,11 @@ while($row = mysqli_fetch_array($result)) {
         }
 }
 else{
-echo "No result found";
+echo '  <div class="col-md-12 gallery-item">
+                    <div class="img-card">
+                        <h2> No Gallery Found</h2>
+                    </div>
+                </div>';
 }?>
             </div>
         </div>
