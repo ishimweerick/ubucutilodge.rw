@@ -492,6 +492,14 @@ echo "No result found";
 			<p>What Client Say About Us?</p>
 		</div>
 		<div class="testimonial-content owl-carousel">
+
+
+        <?php
+            $result = mysqli_query($con,"SELECT * FROM testimony");
+if (mysqli_num_rows($result) > 0) {
+    $i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
 			<!-- Single Testimonial -->
 			<div class="single-testimonial">
 				<div class="round-1 round"></div>
@@ -508,6 +516,15 @@ echo "No result found";
 				</div>
 
 			</div>
+            <?php
+            
+            $i++;
+            }
+}
+else{
+echo "No Slide found";
+}
+?> 
 			<!-- Single Testimonial -->
 			<div class="single-testimonial">
 				<div class="round-1 round"></div>
