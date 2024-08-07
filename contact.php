@@ -1,66 +1,18 @@
-<?php include "include/header.php";?>
-<?php
-           $status = "OK"; //initial status
-$msg="";
-           if(ISSET($_POST['save'])){
-$name = mysqli_real_escape_string($con,$_POST['name']);
-$email = mysqli_real_escape_string($con,$_POST['email']);
-$phone = mysqli_real_escape_string($con,$_POST['phone']);
-$message = mysqli_real_escape_string($con,$_POST['message']);
+<?php include "include/header.php";
 
- if ( strlen($name) < 5 ){
-$msg=$msg."Name Must Be More Than 5 Char Length.<BR>";
-$status= "NOTOK";}
- if ( strlen($email) < 9 ){
-$msg=$msg."Email Must Be More Than 10 Char Length.<BR>";
-$status= "NOTOK";}
-if ( strlen($message) < 10 ){
-    $msg=$msg."Message Must Be More Than 10 Char Length.<BR>";
-    $status= "NOTOK";}
+if (! empty($_POST["send"])) {
+    $name = $_POST["userName"];
+    $email = $_POST["userEmail"];
+    $subject = $_POST["subject"];
+    $content = $_POST["content"];
+    $stmt = $con->prepare("INSERT INTO tblcontact (user_name, user_email, subject,content) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $subject, $content);
 
-if ( strlen($phone) < 8 ){
-  $msg=$msg."Phone Must Be More Than 8 Char Length.<BR>";
-  $status= "NOTOK";}
-
-  if($status=="OK")
-  {
-
-$recipient="clapon955@gmail.com";
-
-$formcontent="NAME:$name \n EMAIL: $email  \n PHONE: $phone  \n MESSAGE: $message";
-
-$subject = "New Enquiry from Vogue Website";
-$mailheader = "From: clapon955@gmail.com \r\n";
-$result= mail($recipient, $subject, $formcontent);
-
-          if($result){
-                  $errormsg= "
-  <div class='alert alert-success alert-dismissible alert-outline fade show'>
-                   Enquiry Sent Successfully. We shall get back to you ASAP.
-                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                    </div>
-   "; //printing error if found in validation
-
-          }
-      }
-
-          elseif ($status!=="OK") {
-              $errormsg= "
-  <div class='alert alert-danger alert-dismissible alert-outline fade show'>
-                       ".$msg." <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button> </div>"; //printing error if found in validation
-
-
-      }
-      else{
-              $errormsg= "
-        <div class='alert alert-danger alert-dismissible alert-outline fade show'>
-                   Some Technical Glitch Is There. Please Try Again Later Or Ask Admin For Help.
-                   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                   </div>"; //printing error if found in validation
-
-
-          }
-             }
+    $stmt->execute();
+    $message = "Your contact information is saved successfully.";
+    $type = "success";
+    $stmt->close();
+}
              ?>
 
 
@@ -125,7 +77,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 						}
    ?>
 
-                                    <form action="" method="post" enctype="multipart/form-data">
+                                    <form name="frmContact" id="" frmContact="" method="post"
+            action="" enctype="multipart/form-data"
+            onsubmit="return validateContactForm()">
                                     <!-- form message -->
                                         <div class="row">
                                             <div class="col-12">
@@ -135,25 +89,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                                         <!-- form elements -->
                                         <div class="row">
                                             <div class="col-md-6 form-group">
-                                                <input id="name" name="name" type="text" placeholder="Your Name *" required>
+                                                <input id="userName" name="userName" type="text" placeholder="Your Name *" required>
                                             </div>
                                             <div class="col-md-6 form-group">
-                                                <input id="email" name="email" type="email" placeholder="Your Email *" required>
+                                                <input id="userEmail" name="userEmail" type="email" placeholder="Your Email *" required>
                                             </div>
-                                            <div class="col-md-6 form-group">
-                                                <input id="phone" name="phone" type="text" placeholder="Your Number *" required>
-                                            </div>
-                                            <div class="col-md-6 form-group">
+                                            <div class="col-md-12 form-group">
                                                 <input id="subject" name="subject" type="text" placeholder="Subject *" required>
                                             </div>
                                             <div class="col-md-12 form-group">
-                                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Write something.." required></textarea>
+                                                <textarea name="content" id="content" cols="30" rows="4" placeholder="Write something.." required></textarea>
                                             </div>
                                             <div class="col-md-12 mt-10">
-                                            <button type="submit" class="butn-dark2" name="save"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>Send Message -></button>
-
+                                            <input type="submit" name="send"  class="butn-dark2"
+                                            value="Send Message ->" />
                                             </div>
+
+
+
+
+                                            <div id="statusMessage"> 
+                        <?php
+                        if (! empty($message)) {
+                            ?>
+                            <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
+                        <?php
+                        }
+                        ?>
+                    </div>
                                         </div>
+
+
                                     </form>
                                 </div>
                             </div>
@@ -164,6 +130,56 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         </div>
     </section>
     <!-- Map -->
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        function validateContactForm() {
+            var valid = true;
+
+            $(".info").html("");
+            $(".input-field").css('border', '#e0dfdf 1px solid');
+            var userName = $("#userName").val();
+            var userEmail = $("#userEmail").val();
+            var subject = $("#subject").val();
+            var content = $("#content").val();
+            
+            if (userName == "") {
+                $("#userName-info").html("Required.");
+                $("#userName").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (userEmail == "") {
+                $("#userEmail-info").html("Required.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+            {
+                $("#userEmail-info").html("Invalid Email Address.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (subject == "") {
+                $("#subject-info").html("Required.");
+                $("#subject").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (content == "") {
+                $("#userMessage-info").html("Required.");
+                $("#content").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            return valid;
+        }
+</script>
+
+
+
+
         <section class="map">
             <div class="full-width">
                 <iframe src="<?php print $company_officeaddress_map?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
