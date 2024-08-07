@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center caption">
-                    <h5>Hotel Gallery</h5>
+                    <h5>Ubucuti Lodge</h5>
                     <h1>Image Gallery</h1>
                 </div>
             </div>
