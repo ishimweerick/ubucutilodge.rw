@@ -34,11 +34,69 @@ if(ISSET($_POST['save'])){
     // If validation passes, send the email
     if ($status == "OK") {
         $recipient = "clapton955@gmail.com";
-        $formcontent = "NAME: $name\nEMAIL: $email\nPHONE: $phone\nMESSAGE: $message";
-        $subject = "New Enquiry from Vogue Website";
+        $subject = "New Enquiry from Ubucuti Lodge";
+        
+        // Email content with HTML and CSS
+        $formcontent = "
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    color: #333333;
+                }
+                .container {
+                    padding: 20px;
+                    border: 1px solid #e2e2e2;
+                    border-radius: 5px;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #f9f9f9;
+                }
+                .header {
+                    background-color: #007bff;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px 5px 0 0;
+                }
+                .content {
+                    padding: 20px;
+                }
+                .footer {
+                    background-color: #007bff;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 0 0 5px 5px;
+                    text-align: center;
+                }
+                h2 {
+                    margin-top: 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <h2>New Enquiry from Ubucuti Lodge</h2>
+                </div>
+                <div class='content'>
+                    <p><strong>NAME:</strong> $name</p>
+                    <p><strong>EMAIL:</strong> $email</p>
+                    <p><strong>PHONE:</strong> $phone</p>
+                    <p><strong>MESSAGE:</strong></p>
+                    <p>$message</p>
+                </div>
+                <div class='footer'>
+                    <p>&copy; 2024 Ubucuti Lodge</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+
+        // Headers for HTML email
         $mailheader = "From: $email\r\n";
         $mailheader .= "Reply-To: $email\r\n";
-        $mailheader .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        $mailheader .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         // Send the email
         $result = mail($recipient, $subject, $formcontent, $mailheader);
