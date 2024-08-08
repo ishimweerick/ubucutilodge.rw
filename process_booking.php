@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $room = htmlspecialchars($_POST['room']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
+    $name = "Ishimwe Eric Clapton"; // or you can retrieve this from form if available
+    $address = "Optional Address"; // or you can retrieve this from form if available
 
     // Validate data (optional, add your own validation rules)
     if (empty($checkin) || empty($checkout) || empty($adults) || empty($room) || empty($email) || empty($phone)) {
@@ -16,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare the email content
-    $subject = "New Room Booking Request";
+    $subject = "New Room Booking Inquiry";
     $message = "
     <html>
     <head>
-        <title>Room Booking Request</title>
+        <title>Room Booking Inquiry</title>
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; }
             .email-container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9; }
@@ -32,17 +34,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <div class='email-container'>
             <div class='email-header'>
-                <h2>New Room Booking Request</h2>
+                <h2>Room Booking Inquiry</h2>
             </div>
             <div class='email-content'>
+                <p>I hope this message finds you well. I am writing to inquire about the availability of a room at your hotel. I would like to book a room as per the following details:</p>
+                <p><strong>Booking Details:</strong></p>
+                <p><strong>Name:</strong> $name</p>
                 <p><strong>Check-in Date:</strong> $checkin</p>
                 <p><strong>Check-out Date:</strong> $checkout</p>
-                <p><strong>Adults:</strong> $adults</p>
-                <p><strong>Children:</strong> $children</p>
                 <p><strong>Room Type:</strong> $room</p>
-                <hr>
-                <p><strong>Email:</strong> $email</p>
-                <p><strong>Phone:</strong> $phone</p>
+                <p><strong>Number of Guests:</strong> $adults Adults, $children Children</p>
+                <p><strong>Special Requests:</strong></p>
+                <p>[e.g., Non-smoking room, late check-in, early check-out, specific bed type, etc.]</p>
+                <p>Please let me know if the room is available and the total cost for the stay. Additionally, kindly inform me of any prepayment or deposit requirements.</p>
+                <p>I look forward to your confirmation and any further instructions regarding the booking process.</p>
+                <p>Thank you for your assistance.</p>
+                <p><strong>Best regards,</strong></p>
+                <p>$name</p>
+                <p><strong>Contact Information:</strong> $email, $phone</p>
+                <p><strong>Address:</strong> $address</p>
             </div>
             <div class='email-footer'>
                 <p>This is an automated message from the booking system.</p>
