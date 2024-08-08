@@ -34,7 +34,7 @@ if(ISSET($_POST['save'])){
     // If validation passes, send the email
     if ($status == "OK") {
         $recipient = "clapton955@gmail.com";
-        $subject = "New Enquiry from Ubucuti Lodge";
+        $subject = "Room Reservation Request for ".$name;
         
         // Email content with HTML and CSS
         $formcontent = "
@@ -54,7 +54,7 @@ if(ISSET($_POST['save'])){
                     background-color: #f9f9f9;
                 }
                 .header {
-                    background-color: #007bff;
+                    background-color: #aa8454;
                     color: white;
                     padding: 10px;
                     border-radius: 5px 5px 0 0;
@@ -63,7 +63,7 @@ if(ISSET($_POST['save'])){
                     padding: 20px;
                 }
                 .footer {
-                    background-color: #007bff;
+                    background-color: #aa8454;
                     color: white;
                     padding: 10px;
                     border-radius: 0 0 5px 5px;
@@ -77,7 +77,7 @@ if(ISSET($_POST['save'])){
         <body>
             <div class='container'>
                 <div class='header'>
-                    <h2>New Enquiry from Ubucuti Lodge</h2>
+                    <h2>New Enquiry from Ubucuti Lodge Website</h2>
                 </div>
                 <div class='content'>
                     <p><strong>NAME:</strong> $name</p>
