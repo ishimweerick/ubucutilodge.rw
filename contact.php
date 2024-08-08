@@ -34,7 +34,7 @@ if(ISSET($_POST['save'])){
     // If validation passes, send the email
     if ($status == "OK") {
         $recipient = "clapton955@gmail.com";
-        $subject = "Room Reservation Request for ".$name;
+        $subject = "New Enquiry from ".$name;
         
         // Email content with HTML and CSS
         $formcontent = "
@@ -80,10 +80,8 @@ if(ISSET($_POST['save'])){
                     <h2>New Enquiry from Ubucuti Lodge Website</h2>
                 </div>
                 <div class='content'>
-                    <p><strong>NAME:</strong> $name</p>
-                    <p><strong>EMAIL:</strong> $email</p>
-                    <p><strong>PHONE:</strong> $phone</p>
-                    <p><strong>MESSAGE:</strong></p>
+                    <p>$name<br>$email<br>$phone</p>
+                    <br>
                     <p>$message</p>
                 </div>
                 <div class='footer'>
