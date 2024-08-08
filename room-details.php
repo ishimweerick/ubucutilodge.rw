@@ -71,6 +71,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             </div>
             <div class="col-md-8">
                 <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
+                <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
             </div>
             <div class="col-md-3 offset-md-1">
                 <h6>Amenities</h6>
