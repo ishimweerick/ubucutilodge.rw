@@ -14,7 +14,7 @@ if(ISSET($_POST['save'])){
     $message = mysqli_real_escape_string($con, $_POST['message']);
 
     // Validate input data
-    if (strlen($name) < 5) {
+    if (strlen($name) < 1) {
         $msg .= "Name Must Be More Than 5 Char Length.<br>";
         $status = "NOTOK";
     }
@@ -33,7 +33,7 @@ if(ISSET($_POST['save'])){
 
     // If validation passes, send the email
     if ($status == "OK") {
-        $recipient = "clapton955@gmail.com";
+        $recipient = "ubucuti.lodge@gmail.com";
         $subject = "New Enquiry from ".$name;
         
         // Email content with HTML and CSS
