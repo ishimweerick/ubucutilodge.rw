@@ -1,50 +1,70 @@
 <?php
-include "z_db.php"; // Ensure this file connects to your database
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $checkin_date = mysqli_real_escape_string($con, $_POST['checkin_date']);
-    $checkout_date = mysqli_real_escape_string($con, $_POST['checkout_date']);
-    $package_id = mysqli_real_escape_string($con, $_POST['package_id']);
-    $created_at = date('Y-m-d H:i:s');
+    // Get booking data from the form
+    $package_id = htmlspecialchars($_POST['package_id']);
+    $price = htmlspecialchars($_POST['price']);
+    $name = htmlspecialchars($_POST['name']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $email = htmlspecialchars($_POST['email']);
+    $checkin_date = htmlspecialchars($_POST['checkin_date']);
+    $checkout_date = htmlspecialchars($_POST['checkout_date']);
 
-    $sql = "INSERT INTO bookings (name, phone, email, checkin_date, checkout_date, package_id, created_at) 
-            VALUES ('$name', '$phone', '$email', '$checkin_date', '$checkout_date', '$package_id', '$created_at')";
-
-    if (mysqli_query($con, $sql)) {
-        echo "Booking successful!";
-        // Optionally, redirect to a success page or display a success message
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    // Validate data (optional, add your own validation rules)
+    if (empty($package_id) || empty($price) || empty($name) || empty($phone) || empty($email) || empty($checkin_date) || empty($checkout_date)) {
+        echo "All fields are required.";
+        exit;
     }
 
-    mysqli_close($con);
-}
-?>
-<?php
-include "include/db_connect.php"; // Ensure this file connects to your database
+    // Prepare the email content
+    $subject = "New Booking Request";
+    $message = "
+    <html>
+    <head>
+        <title>Booking Request</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; }
+            .email-container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9; }
+            .email-header { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
+            .email-content { padding: 20px; }
+            .email-footer { text-align: center; padding: 10px; color: #777; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class='email-container'>
+            <div class='email-header'>
+                <h2>New Booking Request</h2>
+            </div>
+            <div class='email-content'>
+                <p><strong>Package ID:</strong> $package_id</p>
+                <p><strong>Price:</strong> $$price</p>
+                <p><strong>Name:</strong> $name</p>
+                <p><strong>Phone:</strong> $phone</p>
+                <p><strong>Email:</strong> $email</p>
+                <p><strong>Check-in Date:</strong> $checkin_date</p>
+                <p><strong>Check-out Date:</strong> $checkout_date</p>
+            </div>
+            <div class='email-footer'>
+                <p>This is an automated message from the booking system.</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $checkin_date = mysqli_real_escape_string($con, $_POST['checkin_date']);
-    $checkout_date = mysqli_real_escape_string($con, $_POST['checkout_date']);
-    $package_id = mysqli_real_escape_string($con, $_POST['package_id']);
-    $created_at = date('Y-m-d H:i:s');
+    // Set email headers
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= "From: <$email>" . "\r\n";
+    $headers .= "Reply-To: $email" . "\r\n";
 
-    $sql = "INSERT INTO bookings (name, phone, email, checkin_date, checkout_date, package_id, created_at) 
-            VALUES ('$name', '$phone', '$email', '$checkin_date', '$checkout_date', '$package_id', '$created_at')";
-
-    if (mysqli_query($con, $sql)) {
-        echo "Booking successful!";
-        // Optionally, redirect to a success page or display a success message
+    // Send email
+    $to = "clapton955@gmail.com";
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Booking request sent successfully.";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        echo "Failed to send booking request. Please try again.";
     }
-
-    mysqli_close($con);
+} else {
+    echo "Invalid request method.";
 }
 ?>

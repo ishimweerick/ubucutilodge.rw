@@ -168,7 +168,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 </section>
 
 <?php include "include/footer.php"; ?>
-
 <!-- Booking Modal -->
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
