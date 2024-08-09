@@ -18,8 +18,30 @@ while($row = mysqli_fetch_array($result))
 }
   ?>
 
+
+
   <!-- Slider -->
   <header class="header slider-fade">
+
+
+   <!-- Promo Video -->
+   <section class="banner-video-wrapper" data-overlay-dark="3">
+        <video width="100%" height="100%" autoplay="autoplay" muted="" preload="auto" loop="loop">
+            <source src="ubucuti-video.mp4" type="video/mp4">
+        </video>
+        <div class="wrap-content v-middle">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <h1>Welcome to Ubucuti Lodge</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
            
@@ -193,21 +215,7 @@ echo "No Slide found";
             </div>
         </div>
     </section>
-    <!-- Promo Video -->
-    <section class="banner-video-wrapper" data-overlay-dark="3">
-        <video width="100%" height="100%" autoplay="autoplay" muted="" preload="auto" loop="loop">
-            <source src="ubucuti-video.mp4" type="video/mp4">
-        </video>
-        <div class="wrap-content v-middle">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <h1>Welcome to Ubucuti Lodge</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
    
     <!-- Testiominals -->
     <section class="testimonials">
