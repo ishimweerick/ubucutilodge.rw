@@ -155,40 +155,32 @@ if(ISSET($_POST['save'])){
                 <div class="row mb-30">
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"><span class="flaticon-call"></span></div>
+                            <div class="icon"> <img src="whastapp.svg" alt=""> </div>
                             <div class="text">
-                                <p>Reservation</p>
+                                <p>Whatsapp</p>
                                 <a href="tel:<?php print $company_officeatel?>"><?php print $company_officeatel?><br><?php print $company_officemob?></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"><span class="flaticon-call"></span></div>
+                            <div class="icon"><img src="phone.svg" alt=""></div>
                             <div class="text">
-                                <p>Reservation</p>
+                                <p>Phone</p>
                                 <a href="tel:<?php print $company_officeatel?>"><?php print $company_officeatel?><br><?php print $company_officemob?></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"><span class="flaticon-envelope"></span></div>
+                            <div class="icon"><img src="email.svg" alt=""></div>
                             <div class="text">
                                 <p>Email Info</p>
                                 <a href="mailto:<?php print $company_email?>"><?php print $company_email?><br><?php print $company_website?></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="reservations mb-15">
-                            <div class="icon"><span class="flaticon-location-pin"></span></div>
-                            <div class="text">
-                                <p>Address</p>
-                                <?php print $company_officeaddress?>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
                 <div class="row">
                     <div class="col-md-12">
