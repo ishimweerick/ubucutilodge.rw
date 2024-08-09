@@ -154,7 +154,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
                     </div>
                 </div>
                 <div class="col3 c6">
-                    <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
+                    <button type="button" class="btn-form1-submit" >Book Now</button>
                 </div>
             </form>
         </div>
