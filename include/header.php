@@ -94,15 +94,9 @@ while($row = mysqli_fetch_array($result))
 </head>
 
 
-<audio loop= 'true'>
-<source src="https://www.ubucutilodge.rw/jazzsong_music.mp3" type="audio/mp3">
-</audio>
-<script>
-let x = document.querySelector('audio');
-function play(){
-x.play();
-}
-</script>
+<embed src="https://www.ubucutilodge.rw/jazzsong_music.mp3" loop="true" autostart="true" width="2"
+height="0">
+
 
 
 <body>
