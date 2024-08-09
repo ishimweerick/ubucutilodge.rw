@@ -71,6 +71,8 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             </div>
             <div class="col-md-8">
                 <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
+                <p class="mb-30">$<?php echo number_format($price, 2); ?></p>
+                
                 <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
 
             </div>
@@ -94,12 +96,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 </section>
 
 
-<!-- Displaying price based on the day -->
-<section class="price-section section-padding">
-    <div class="container">
-        <h4>Today's Price: $<?php echo number_format($price, 2); ?></h4>
-    </div>
-</section>
 
 <?php include "include/footer.php"; ?>
 

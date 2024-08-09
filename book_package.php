@@ -3,6 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get booking data from the form
     $package_id = htmlspecialchars($_POST['package_id']);
     $price = htmlspecialchars($_POST['price']);
+    $package_title = htmlspecialchars($_POST['package_title']); // Get the package title
     $name = htmlspecialchars($_POST['name']);
     $phone = htmlspecialchars($_POST['phone']);
     $email = htmlspecialchars($_POST['email']);
@@ -10,13 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkout_date = htmlspecialchars($_POST['checkout_date']);
 
     // Validate data (optional, add your own validation rules)
-    if (empty($package_id) || empty($price) || empty($name) || empty($phone) || empty($email) || empty($checkin_date) || empty($checkout_date)) {
+    if (empty($package_id) || empty($price) || empty($package_title) || empty($name) || empty($phone) || empty($email) || empty($checkin_date) || empty($checkout_date)) {
         echo "All fields are required.";
         exit;
     }
 
     // Prepare the email content
-    $subject = "New Booking Request";
+    $subject = "New Booking Request for Room: $package_title";
+    $room_link = "https://ubucutilodge.rw/room-details.php?id=$package_id";
     $message = "
     <html>
     <head>
@@ -27,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             .email-header { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
             .email-content { padding: 20px; }
             .email-footer { text-align: center; padding: 10px; color: #777; font-size: 12px; }
+            .room-link { color: #4CAF50; text-decoration: none; }
         </style>
     </head>
     <body>
@@ -35,7 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>New Booking Request</h2>
             </div>
             <div class='email-content'>
-                <p><strong>Package ID:</strong> $package_id</p>
+                <p><strong>Room:</strong> <a href='$room_link' class='room-link'>$package_title</a></p>
+                <p><strong>Room ID:</strong> $package_id</p>
                 <p><strong>Price:</strong> $$price</p>
                 <p><strong>Name:</strong> $name</p>
                 <p><strong>Phone:</strong> $phone</p>
