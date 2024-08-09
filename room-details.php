@@ -66,9 +66,9 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 <section class="room-details1 section-padding" data-scroll-index="1">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <div class="section-title"><?php echo htmlspecialchars($package_title); ?></div>
-            </div>
+            </div> -->
             <div class="col-md-8">
     <!-- Title and Price in the same row -->
     <div class="d-flex justify-content-between align-items-center mb-30">
