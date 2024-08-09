@@ -18,14 +18,8 @@ while($row = mysqli_fetch_array($result))
 }
   ?>
 
-
-
-  <!-- Slider -->
-  <header class="header slider-fade">
-
-
-   <!-- Promo Video -->
-   <section class="banner-video-wrapper" data-overlay-dark="3">
+ <!-- Promo Video -->
+ <section class="banner-video-wrapper" data-overlay-dark="3">
         <video width="100%" height="100%" autoplay="autoplay" muted="" preload="auto" loop="loop">
             <source src="ubucuti-video.mp4" type="video/mp4">
         </video>
@@ -40,8 +34,11 @@ while($row = mysqli_fetch_array($result))
         </div>
     </section>
 
+  <!-- Slider -->
+  <header class="header slider-fade">
 
-    
+
+  
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
            
