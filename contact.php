@@ -18,15 +18,15 @@ if(ISSET($_POST['save'])){
         $msg .= "Name Must Be More Than 5 Char Length.<br>";
         $status = "NOTOK";
     }
-    if (strlen($email) < 9) {
+    if (strlen($email) < 1) {
         $msg .= "Email Must Be More Than 10 Char Length.<br>";
         $status = "NOTOK";
     }
-    if (strlen($message) < 10) {
+    if (strlen($message) < 1) {
         $msg .= "Message Must Be More Than 10 Char Length.<br>";
         $status = "NOTOK";
     }
-    if (strlen($phone) < 8) {
+    if (strlen($phone) < 1) {
         $msg .= "Phone Must Be More Than 8 Char Length.<br>";
         $status = "NOTOK";
     }
