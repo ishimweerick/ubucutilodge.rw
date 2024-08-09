@@ -148,7 +148,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 </div>
 
 <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Datepicker JS (if used) -->
