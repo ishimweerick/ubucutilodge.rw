@@ -36,52 +36,7 @@ while($row = mysqli_fetch_array($result))
     </section>
 
   <!-- Slider -->
-  <header class="header slider-fade">
-
-
-  
-        <div class="owl-carousel owl-theme">
-            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-           
-            <?php
-            $result = mysqli_query($con,"SELECT * FROM slider");
-if (mysqli_num_rows($result) > 0) {
-    $i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-            <div class="text-center item bg-img" data-overlay-dark="6" data-background="dashboard/uploads/slider/<?php print $row["ufile"]?>">
-                <div class="v-middle caption">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-12"> <span>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                </span>
-                                <!-- <h4>Resort & Spa Hotel</h4> -->
-                                <h1><?php echo $row["slide_title"]; ?></h1>
-                                <h4><?php echo $row["slide_text"]; ?></h4>
-                                <!-- <div class="butn-light mt-30 mb-30"> <a href="index.html#"><span>Explore More</span></a> </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-               <?php
-            
-            $i++;
-            }
-}
-else{
-echo "No Slide found";
-}
-?>
-        </div>
-    </header>
+ 
     <!-- Booking Search -->
 
 
