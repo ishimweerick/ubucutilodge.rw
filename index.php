@@ -27,7 +27,8 @@ while($row = mysqli_fetch_array($result))
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center">
-                        <h1>Welcome to Ubucuti Lodge</h1>
+                        <h1>Ubucuti Lodge</h1>
+                        <h4>Come as a guest,<br> Leave as a friend</h4>
                     </div>
                 </div>
             </div>
