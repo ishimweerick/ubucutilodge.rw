@@ -94,8 +94,15 @@ while($row = mysqli_fetch_array($result))
 </head>
 
 
-<embed src="https://www.ubucutilodge.rw/jazzsong_music.mp3" loop="true" autostart="true" width="2"
-height="0">
+<audio id="jazzsong" loop autoplay style="display: none;">
+    <source src="https://www.ubucutilodge.rw/jazzsong_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    var audioElement = document.getElementById("jazzsong");
+    audioElement.volume = 0.3; // Set volume to 30%
+</script>
 
 
 
