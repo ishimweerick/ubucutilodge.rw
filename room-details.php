@@ -36,13 +36,13 @@ $isWeekend = isWeekend($currentDay);
 $price = $isWeekend ? $price_weekend : $price_weekday;
 ?>
 
-
 <!-- Room Page Slider -->
 <header class="header slider">
     <div class="owl-carousel owl-theme">
         <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
         <?php
             $portfolio_query = mysqli_query($con, "SELECT * FROM `photo` WHERE package_id='$todo'");
+            $active = true;
             $hasImages = false;
             while ($portfolio_row = mysqli_fetch_array($portfolio_query)) {
                 $location = $portfolio_row['location'];
@@ -61,7 +61,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             <span class="mouse-wheel"></span> </span>
     </a>
 </header>
-<!-- End of Room Page Slider -->
 
 <!-- Room Content -->
 <section class="room-details1 section-padding" data-scroll-index="1">
@@ -72,7 +71,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             </div>
             <div class="col-md-8">
                 <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
-                <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
             </div>
             <div class="col-md-3 offset-md-1">
                 <h6>Amenities</h6>
@@ -93,6 +91,74 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
     </div>
 </section>
 
+<!-- Booking Search -->
+<section class="section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="img/rooms/18.jpg">
+    <div class="container">
+        <div class="booking-inner clearfix">
+            <form action="#" class="form1 clearfix">
+                <div class="col1 c1">
+                    <div class="input1_wrapper border-l border-b border-t border-r">
+                        <label>Check in</label>
+                        <div class="input1_inner">
+                            <input type="text" id="checkin_date" class="form-control input datepicker" placeholder="Check in">
+                        </div>
+                    </div>
+                </div>
+                <div class="col1 c2">
+                    <div class="input1_wrapper border-l border-b border-t border-r">
+                        <label>Check out</label>
+                        <div class="input1_inner">
+                            <input type="text" id="checkout_date" class="form-control input datepicker" placeholder="Check out">
+                        </div>
+                    </div>
+                </div>
+                <div class="col2 c3">
+                    <div class="select1_wrapper border-l border-b border-t border-r">
+                        <label>Adults</label>
+                        <div class="select1_inner">
+                            <select id="adults" class="select2 select" style="width: 100%">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2 c4">
+                    <div class="select1_wrapper border-l border-b border-t border-r">
+                        <label>Children</label>
+                        <div class="select1_inner">
+                            <select id="children" class="select2 select" style="width: 100%">
+                                <option value="1">Children</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
+                                <option value="3">3 Children</option>
+                                <option value="4">4 Children</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2 c5">
+                    <div class="select1_wrapper border-l border-b border-t border-r">
+                        <label>Rooms</label>
+                        <div class="select1_inner">
+                            <select id="rooms" class="select2 select" style="width: 100%">
+                                <option value="1">1 Room</option>
+                                <option value="2">2 Rooms</option>
+                                <option value="3">3 Rooms</option>
+                                <option value="4">4 Rooms</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3 c6">
+                    <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 <!-- Displaying price based on the day -->
 <section class="price-section section-padding">
@@ -102,6 +168,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 </section>
 
 <?php include "include/footer.php"; ?>
+
 <!-- Booking Modal -->
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -145,21 +212,3 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
     </div>
   </div>
 </div>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Datepicker JS (if used) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-<script>
-$(document).ready(function() {
-    // Initialize datepicker
-    $('.datepicker').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-    });
-});
-</script>
