@@ -70,9 +70,9 @@
                 </div>
                 <div class="col-md-6 gallery-item">
                     <div class="img-card">
-                        <a href="img/rooms/18.jpg" title="" class="img-zoom">
+                        <a href="dashboard/uploads/about/4881Radiant_Memory-2512.jpg" title="" class="img-zoom">
                             <div class="img-block">
-                                <div class="wrapper-img"> <img src="img/rooms/18.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                                <div class="wrapper-img"> <img src="dashboard/uploads/about/4881Radiant_Memory-2512.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
                                 <div class="title-block">
                                     <h6>Superior Room</h6>
                                 </div>

@@ -70,12 +70,16 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
                 <div class="section-title"><?php echo htmlspecialchars($package_title); ?></div>
             </div>
             <div class="col-md-8">
-                <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
-                <p class="mb-30">$<?php echo number_format($price, 2); ?></p>
-                
-                <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
-
-            </div>
+    <!-- Title and Price in the same row -->
+    <div class="d-flex justify-content-between align-items-center mb-30">
+        <h3 class="mb-0"><?php echo htmlspecialchars($package_title); ?></h3>
+        <h3 class="mb-0">$<?php echo number_format($price, 2); ?></h3>
+    </div>
+    
+    <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
+    
+    <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
+</div>
             <div class="col-md-3 offset-md-1">
                 <h6>Amenities</h6>
                 <ul class="list-unstyled page-list mb-30">

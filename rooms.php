@@ -76,7 +76,7 @@
     </div>
 </section>
 <!-- Booking Search -->
-<section class="section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="img/rooms/18.jpg">
+<section class="section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="dashboard/uploads/about/4881Radiant_Memory-2512.jpg">
     <div class="container">
         <div class="booking-inner clearfix">
             <form id="bookingForm" class="form1 clearfix">
