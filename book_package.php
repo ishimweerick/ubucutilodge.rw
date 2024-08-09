@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Reply-To: $email" . "\r\n";
 
     // Send email
-    $to = "clapton955@gmail.com";
+    $to = "ubucuti.lodge@gmail.com";
     if (mail($to, $subject, $message, $headers)) {
         echo "<p style='color: green;'>Booking request sent successfully.</p>";
     } else {
