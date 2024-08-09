@@ -37,11 +37,13 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 ?>
 
 <!-- Room Page Slider -->
+<!-- Room Page Slider -->
 <header class="header slider">
     <div class="owl-carousel owl-theme">
         <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
         <?php
-            $portfolio_query = mysqli_query($con, "SELECT * FROM `photo` WHERE package_id='$todo'");
+            $portfolio_query = mysqli_query($con, "SELECT * FROM photo WHERE package_id='$todo'");
+            $active = true;
             $hasImages = false;
             while ($portfolio_row = mysqli_fetch_array($portfolio_query)) {
                 $location = $portfolio_row['location'];
