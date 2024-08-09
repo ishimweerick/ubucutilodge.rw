@@ -92,9 +92,18 @@ while($row = mysqli_fetch_array($result))
     <link rel="stylesheet" href="css/plugins.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
-<audio loop autoplay>
+
+
+<audio loop= 'true'>
 <source src="jazzsong_music.mp3" type="audio/mp3">
 </audio>
+<script>
+let x = document.querySelector('audio');
+function play(){
+x.play();
+}
+</script>
+
 
 <body>
     <!-- Preloader -->
