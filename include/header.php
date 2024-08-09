@@ -95,7 +95,7 @@ while($row = mysqli_fetch_array($result))
 
 
 <audio loop= 'true'>
-<source src="jazzsong_music.mp3" type="audio/mp3">
+<source src="https://www.ubucutilodge.rw/jazzsong_music.mp3" type="audio/mp3">
 </audio>
 <script>
 let x = document.querySelector('audio');
