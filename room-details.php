@@ -73,7 +73,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
     <!-- Title and Price in the same row -->
     <div class="d-flex justify-content-between align-items-center mb-30">
         <h3 class="mb-0"><?php echo htmlspecialchars($package_title); ?></h3>
-        <h3 class="mb-0">$<?php echo number_format($price, 2); ?></h3>
+        <h3 class="mb-0" style="color: #aa8453;">$<?php echo number_format($price, 2); ?></h3>
     </div>
     
     <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
