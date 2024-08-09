@@ -1,18 +1,18 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get booking data from the form
-    $package_id = htmlspecialchars($_POST['package_id']);
-    $price = htmlspecialchars($_POST['price']);
-    $package_title = htmlspecialchars($_POST['package_title']); // Get the package title
-    $name = htmlspecialchars($_POST['name']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $email = htmlspecialchars($_POST['email']);
-    $checkin_date = htmlspecialchars($_POST['checkin_date']);
-    $checkout_date = htmlspecialchars($_POST['checkout_date']);
+    $package_id = isset($_POST['package_id']) ? htmlspecialchars($_POST['package_id']) : '';
+    $price = isset($_POST['price']) ? htmlspecialchars($_POST['price']) : '';
+    $package_title = isset($_POST['package_title']) ? htmlspecialchars($_POST['package_title']) : ''; // Get the package title
+    $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '';
+    $phone = isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : '';
+    $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+    $checkin_date = isset($_POST['checkin_date']) ? htmlspecialchars($_POST['checkin_date']) : '';
+    $checkout_date = isset($_POST['checkout_date']) ? htmlspecialchars($_POST['checkout_date']) : '';
 
     // Validate data (optional, add your own validation rules)
     if (empty($package_id) || empty($price) || empty($package_title) || empty($name) || empty($phone) || empty($email) || empty($checkin_date) || empty($checkout_date)) {
-        echo "All fields are required.";
+        echo "<p style='color: red;'>All fields are required.</p>";
         exit;
     }
 
@@ -64,11 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     $to = "clapton955@gmail.com";
     if (mail($to, $subject, $message, $headers)) {
-        echo "Booking request sent successfully.";
+        echo "<p style='color: green;'>Booking request sent successfully.</p>";
     } else {
-        echo "Failed to send booking request. Please try again.";
+        echo "<p style='color: red;'>Failed to send booking request. Please try again.</p>";
     }
 } else {
-    echo "Invalid request method.";
+    echo "<p style='color: red;'>Invalid request method.</p>";
 }
 ?>
