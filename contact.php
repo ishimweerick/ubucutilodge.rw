@@ -146,9 +146,7 @@ if(ISSET($_POST['save'])){
 <section class="contact section-padding" data-scroll-index="1">
     <div class="container">
         <div class="row mb-30">
-            <div class="col-md-3">
-                <div class="sub-title border-bot-light">Location</div>
-            </div>
+         
             
             <div class="col-md-12">
                 <div class="section-title">Contact Us</div>
@@ -232,6 +230,9 @@ if(ISSET($_POST['save'])){
 
 <!-- Map -->
 <section class="map">
+<div class="col-md-3">
+                <div class="sub-title border-bot-light">Location</div>
+            </div>
     <div class="full-width">
         <iframe src="<?php print $company_officeaddress_map?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
