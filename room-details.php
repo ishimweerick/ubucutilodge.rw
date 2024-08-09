@@ -130,13 +130,33 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             <input type="email" class="form-control" name="email" required>
           </div>
           <div class="form-group">
-            <label for="checkin_date">Check-in Date</label>
-            <input type="text" class="form-control datepicker" name="checkin_date" required>
-          </div>
-          <div class="form-group">
-            <label for="checkout_date">Check-out Date</label>
-            <input type="text" class="form-control datepicker" name="checkout_date" required>
-          </div>
+    <label for="checkin_date">Check-in Date</label>
+    <input type="date" class="form-control" id="checkin_date" name="checkin_date" required>
+</div>
+<div class="form-group">
+    <label for="checkout_date">Check-out Date</label>
+    <input type="date" class="form-control" id="checkout_date" name="checkout_date" required>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const today = new Date().toISOString().split('T')[0];
+        const checkinInput = document.getElementById("checkin_date");
+        const checkoutInput = document.getElementById("checkout_date");
+
+        // Set the minimum check-in date to today
+        checkinInput.setAttribute("min", today);
+        
+        // Set the minimum checkout date based on the selected check-in date
+        checkinInput.addEventListener("change", function () {
+            checkoutInput.setAttribute("min", this.value);
+            if (checkoutInput.value < this.value) {
+                checkoutInput.value = this.value;
+            }
+        });
+    });
+</script>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
