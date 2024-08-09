@@ -109,7 +109,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
     <div class="modal-content">
       <form action="book_package.php" method="POST">
         <div class="modal-header">
-          <h5 class="modal-title" id="bookingModalLabel">Book Package</h5>
+          <h5 class="modal-title" id="bookingModalLabel">Book <?php echo htmlspecialchars($package_title); ?></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
