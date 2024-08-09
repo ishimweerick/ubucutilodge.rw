@@ -233,7 +233,7 @@ if(ISSET($_POST['save'])){
 
 
 <!-- Contact -->
-<section class="contact section-padding" data-scroll-index="1">
+<section class="contact" data-scroll-index="1">
     <div class="container">
         <div class="row mb-30">
             <div class="col-md-3">
