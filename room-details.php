@@ -36,6 +36,7 @@ $isWeekend = isWeekend($currentDay);
 $price = $isWeekend ? $price_weekend : $price_weekday;
 ?>
 
+
 <!-- Room Page Slider -->
 <header class="header slider">
     <div class="owl-carousel owl-theme">
@@ -71,7 +72,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
             </div>
             <div class="col-md-8">
                 <p class="mb-30"><?php echo htmlspecialchars($package_description); ?></p>
-                <!-- Trigger for Booking Modal -->
                 <button type="button" class="btn-form1-submit" data-toggle="modal" data-target="#bookingModal">Book Now</button>
             </div>
             <div class="col-md-3 offset-md-1">
@@ -93,6 +93,7 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
     </div>
 </section>
 
+
 <!-- Displaying price based on the day -->
 <section class="price-section section-padding">
     <div class="container">
@@ -101,7 +102,6 @@ $price = $isWeekend ? $price_weekend : $price_weekday;
 </section>
 
 <?php include "include/footer.php"; ?>
-
 <!-- Booking Modal -->
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
