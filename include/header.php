@@ -94,8 +94,16 @@ while($row = mysqli_fetch_array($result))
 </head>
 
 
-<embed src="https://www.ubucutilodge.rw/jazzsong_music.mp3" loop="true" autostart="true" width="2" style="    display: none;"
-height="0">
+<embed id="jazzsong_embed" src="https://www.ubucutilodge.rw/jazzsong_music.mp3" loop="true" autostart="true" width="2" style="display: none;" height="0">
+
+<script>
+    var audioElement = new Audio("https://www.ubucutilodge.rw/jazzsong_music.mp3");
+    audioElement.loop = true;
+    audioElement.autoplay = true;
+    audioElement.volume = 0.3; // Set volume to 30%
+    audioElement.play();
+</script>
+
 
 
 
