@@ -1,15 +1,21 @@
 RewriteEngine On    # Turn on the rewriting engine
 
-RewriteRule    ^home/?$    index.php    [NC,L]
-RewriteRule    ^about/?$    about.php    [NC,L]
-RewriteRule    ^our-team/?$    team.php    [NC,L]
-RewriteRule    ^restaurant/?$    restaurant.php    [NC,L]
-RewriteRule    ^wellness/?$    wellness.php    [NC,L]
-RewriteRule    ^contact/?$    contact.php    [NC,L]
-RewriteRule    ^gallery/?$    gallery.php    [NC,L]
-RewriteRule    ^accomodation/?$    rooms.php    [NC,L]
-RewriteRule    ^valentine/?$    valentine.php    [NC,L]
-RewriteRule    ^eastern/?$    eastern.php    [NC,L]
-RewriteRule    ^mothersday/?$    mothersday.php    [NC,L]
-RewriteRule    ^fathersday/?$    fathersday.php    [NC,L]
-RewriteRule    ^amenities/?$    amenities.php    [NC,L]
+# Cache busting for all pages
+RewriteRule ^home/?$ index.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^about/?$ about.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^our-team/?$ team.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^restaurant/?$ restaurant.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^wellness/?$ wellness.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^contact/?$ contact.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^gallery/?$ gallery.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^accomodation/?$ rooms.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^valentine/?$ valentine.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^eastern/?$ eastern.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^mothersday/?$ mothersday.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^fathersday/?$ fathersday.php?cachebuster=%{TIME} [NC,L]
+RewriteRule ^amenities/?$ amenities.php?cachebuster=%{TIME} [NC,L]
+
+# Optionally, you can also apply cache busting to static assets like CSS and JS
+# This is useful if you want to ensure users always get the latest version
+RewriteRule ^css/(.*)\.css$ /css/$1.css?cachebuster=%{TIME} [NC,L]
+RewriteRule ^js/(.*)\.js$ /js/$1.js?cachebuster=%{TIME} [NC,L]
