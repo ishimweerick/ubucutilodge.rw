@@ -149,7 +149,11 @@ if(ISSET($_POST['save'])){
             <div class="col-md-3">
                 <div class="sub-title border-bot-light">Location</div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            
+            <div class="col-md-12">
+                <div class="section-title">Contact Us</div>
+                <div class="row mb-30">
+                    <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
                             <div class="icon"><span class="flaticon-call"></span></div>
                             <div class="text">
@@ -158,9 +162,6 @@ if(ISSET($_POST['save'])){
                             </div>
                         </div>
                     </div>
-            <div class="col-md-9">
-                <div class="section-title">Contact Us</div>
-                <div class="row mb-30">
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
                             <div class="icon"><span class="flaticon-call"></span></div>
