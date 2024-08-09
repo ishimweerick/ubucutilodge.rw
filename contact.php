@@ -155,7 +155,7 @@ if(ISSET($_POST['save'])){
                 <div class="row mb-30">
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"> <img src="whastapp.svg" alt=""> </div>
+                            <div class="icon"> <img src="whatsapp.svg" alt="" style="width: 35px;"> </div>
                             <div class="text">
                                 <p>Whatsapp</p>
                                 <a href="tel:<?php print $company_officeatel?>"><?php print $company_officeatel?><br><?php print $company_officemob?></a>
@@ -164,7 +164,7 @@ if(ISSET($_POST['save'])){
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"><img src="phone.svg" alt=""></div>
+                            <div class="icon"><img src="phone.svg" alt="" style="width: 35px;"></div>
                             <div class="text">
                                 <p>Phone</p>
                                 <a href="tel:<?php print $company_officeatel?>"><?php print $company_officeatel?><br><?php print $company_officemob?></a>
@@ -173,7 +173,7 @@ if(ISSET($_POST['save'])){
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="reservations mb-15">
-                            <div class="icon"><img src="email.svg" alt=""></div>
+                            <div class="icon"><img src="email.svg" alt="" style="width: 35px;"></div>
                             <div class="text">
                                 <p>Email Info</p>
                                 <a href="mailto:<?php print $company_email?>"><?php print $company_email?><br><?php print $company_website?></a>
