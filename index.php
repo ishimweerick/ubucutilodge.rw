@@ -170,60 +170,97 @@ while($row = mysqli_fetch_array($result))
     </section>
    
    
-    <!-- Testiominals -->
-    <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3 class="sub-title border-bot-dark">Testiominals</h3>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="section-title whte">Guest Feedback</div>
-                        <div class="testimonials-box">
+  <!-- Testimonials -->
+<section class="testimonials">
+    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="sub-title border-bot-dark">Testimonials</h3>
+                </div>
+                <div class="col-md-8">
+                    <div class="section-title whte">Guest Feedback</div>
+                    <div class="testimonials-box">
                         <div class="owl-carousel owl-theme">
-                        <?php
-            $result = mysqli_query($con,"SELECT * FROM testimony");
-if (mysqli_num_rows($result) > 0) {
-    $i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-                    
-                                <div class="item"> <span>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                        <i class="star-rating"></i>
-                                    </span>
-                                    <h5>"<?php echo $row["message"]; ?>"</h5>
-                                    <!-- <div class="info">
-                                        <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
-                                        <div class="cont">
-                                            <h6><?php echo $row["name"]; ?></h6> <span>Customer Review</span>
-                                        </div>
-                                    </div> -->
-                                </div>
-                               
-                       
-
                             <?php
-            
-            $i++;
-            }
-}
-else{
-echo "No Slide found";
-}
-?>     </div>
+                                $result = mysqli_query($con, "SELECT * FROM testimony");
+                                if (mysqli_num_rows($result) > 0) {
+                                    $i=0;
+                                    while($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <div class="item"> 
+                                <span>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                </span>
+                                <h5>"<?php echo $row['message']; ?>"</h5>
+                                <!-- Uncomment if you want to show author info
+                                <div class="info">
+                                    <div class="author-img">
+                                        <img src="img/team/1.jpg" alt="">
+                                    </div>
+                                    <div class="cont">
+                                        <h6><?php echo $row['name']; ?></h6>
+                                        <span>Customer Review</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <?php
+                                        $i++;
+                                    }
+                                } else {
+                                    echo "No Slide found";
+                                }
+                            ?>     
+                        </div>
+                        <!-- Navigation Arrows -->
+                        <div class="owl-nav">
+                            <button class="owl-prev">‹</button>
+                            <button class="owl-next">›</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Services -->
-    
+    </div>
+</section>
+
+<!-- jQuery (necessary for Owl Carousel) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Initialize Owl Carousel -->
+<script>
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true, // Enable navigation arrows
+        navText: ["‹", "›"], // Customize arrow text
+        items: 1, // Number of items to display
+        dots: false // Hide dots if you only want arrows
+    });
+});
+</script>
+
+
+
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
 
 
