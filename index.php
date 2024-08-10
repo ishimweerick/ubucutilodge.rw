@@ -209,7 +209,7 @@ while($row = mysqli_fetch_array($result))
                         <!-- Navigation Arrows -->
                         <div class="owl-nav">
                             <button class="owl-prev">‹</button>
-                            <button class="owl-next">›</button>
+                          
                         </div>
                     </div>
                 </div>
