@@ -36,31 +36,6 @@ while($row = mysqli_fetch_array($result))
     </section>
 
   <!-- Slider -->
-
-
-
-
-<!-- Header Video -->
-<header class="header">
-        <div class="video-fullscreen-wrap">
-            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="video-fullscreen-video" data-overlay-dark="5">
-                <video playsinline="" autoplay="" loop="" muted="">
-                    <source src="ubucuti-video.mp4" type="video/mp4" autoplay="" loop="">
-                </video>
-            </div>
-           
-        </div>
-        <!-- button scroll -->
-        <a href="index8.html#" data-scroll-nav="1" class="mouse smoothscroll">
-            <span class="mouse-icon">
-                <span class="mouse-wheel"></span>
-            </span>
-        </a>
-    </header>
-
-
-
  
     <!-- Booking Search -->
 
@@ -195,298 +170,59 @@ while($row = mysqli_fetch_array($result))
     </section>
    
    
-   <script>
-    $(document).ready(function(){
-    var owl = $('.owl-carousel');
-
-    owl.owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false, // Disable default navigation
-        items:1, // Adjust the number of visible items as needed
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true
-    });
-
-    // Custom Navigation Events
-    $('.custom-next').click(function() {
-        owl.trigger('next.owl.carousel');
-    });
-    $('.custom-prev').click(function() {
-        owl.trigger('prev.owl.carousel');
-    });
-});
-
-</script>
-<style>
-   /* Custom red arrow buttons */
-.custom-nav {
-    background-color: red;
-    border: none;
-    color: white;
-    font-size: 30px;
-    padding: 10px 15px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    z-index: 1000; /* Ensures it stays above other content */
-    opacity: 0.9; /* Slight transparency */
-}
-
-/* Positioning of the previous button */
-.custom-prev {
-    left: -20px; /* Adjust the left position to your preference */
-}
-
-/* Positioning of the next button */
-.custom-next {
-    right: -20px; /* Adjust the right position to your preference */
-}
-
-/* Darken the arrows slightly on hover */
-.custom-nav:hover {
-    background-color: darkred;
-    color: white;
-    opacity: 1; /* Full opacity on hover */
-}
-
-</style>
-<!-- Testimonial Section -->
-<section class="testimonials">
-    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h3 class="sub-title border-bot-dark">Testimonials</h3>
-                </div>
-                <div class="col-md-8">
-                    <div class="section-title whte">Guest Feedback</div>
-                    <div class="testimonials-box">
+    <!-- Testiominals -->
+    <section class="testimonials">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="sub-title border-bot-dark">Testiominals</h3>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="section-title whte">Guest Feedback</div>
+                        <div class="testimonials-box">
                         <div class="owl-carousel owl-theme">
+                        <?php
+            $result = mysqli_query($con,"SELECT * FROM testimony");
+if (mysqli_num_rows($result) > 0) {
+    $i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
+                    
+                                <div class="item"> <span>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                    </span>
+                                    <h5>"<?php echo $row["message"]; ?>"</h5>
+                                    <!-- <div class="info">
+                                        <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                        <div class="cont">
+                                            <h6><?php echo $row["name"]; ?></h6> <span>Customer Review</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                               
+                       
+
                             <?php
-                            $result = mysqli_query($con, "SELECT * FROM testimony");
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_array($result)) {
-                                    ?>
-                                    <div class="item">
-                                        <span>
-                                            <i class="star-rating"></i>
-                                            <i class="star-rating"></i>
-                                            <i class="star-rating"></i>
-                                            <i class="star-rating"></i>
-                                            <i class="star-rating"></i>
-                                        </span>
-                                        <h5>"<?php echo $row["message"]; ?>"</h5>
-                                    </div>
-                                    <?php
-                                }
-                            } else {
-                                echo "No Slide found";
-                            }
-                            ?>
+            
+            $i++;
+            }
+}
+else{
+echo "No Slide found";
+}
+?>     </div>
                         </div>
-                        <!-- Custom Red Arrows -->
-                        <button class="custom-nav custom-prev">‹</button>
-                        <button class="custom-nav custom-next">›</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-<div class="testimonials-section">
-    <input type="radio" name="slider" title="slide1" checked="checked" class="testimonial__nav"/>
-    <input type="radio" name="slider" title="slide2" class="testimonial__nav"/>
-    <input type="radio" name="slider" title="slide3" class="testimonial__nav"/>
-    <input type="radio" name="slider" title="slide4" class="testimonial__nav"/>
-    <input type="radio" name="slider" title="slide5" class="testimonial__nav"/>
-  <div class="testimonial__inner">
-    <div class="testimonial__contents">
-      <quote>&rdquo;</quote>
-      <p class="testimonial__txt">We love you guys. It's easy to order, we get shipments quick and my rep solves tough problems the right way. We get answers that work.</p>
-      <h2 class="testimonial__caption">Rhonda | NylonCraft</h2>
-    </div>
-    <div class="testimonial__contents">
-      <quote>&rdquo;</quote>
-      <p class="testimonial__txt">You all bend over backwards to get it done. Inside sales and the Account Managers are great! It's your service...you all know that it's not just about taking orders it's about service. Why do we choose you guys - your people, your prices, you're quick and you have a ton of technical knowledge.</p>
-      <h2 class="testimonial__caption">Jared | Rexam</h2>
-    </div>
-    <div class="testimonial__contents">
-      <quote>&rdquo;</quote>
-      <p class="testimonial__txt">It's the long-term relationship we have with Proheat that keeps me calling you guys. I trust you, you're quick, and everybody I've ever spoken to there are all great people. Our CEO, Bill, talks about building relationships. That's exactly what Proheat does, and I couldn't be happier.</p>
-      <h2 class="testimonial__caption">Chris | C&M Fine Pack</h2>
-    </div>
-    <div class="testimonial__contents">
-      <quote>&rdquo;</quote>
-      <p class="testimonial__txt">You answer my questions, always takes care of problems, and I never have a hassle.</p>
-      <h2 class="testimonial__caption">Rex | LNP Engineering Plastics</h2>
-    </div>
-    <div class="testimonial__contents">
-      <quote>&rdquo;</quote>
-      <p class="testimonial__txt">Proheat's staff are all so friendly and everybody goes above and beyond. Everyone is courteous, everything is quick and you get us what we need. I have to shop around for everything and we ALWAYS come back to Proheat.</p>
-      <h2 class="testimonial__caption">Darlene | Russel Stover</h2>
-    </div>
-  </div>
-</div>
-
-<style>
-  *, *:before, *:after {
-  box-sizing: border-box;
-}
-html, body {
-  height: 100%;
-}
-.testimonials-section {
-  background: #fff;
-  height: 600px;
-  position: relative;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.testimonial__nav {
-  width: 12px;
-  height: 12px;
-  margin: 80px 12px;
-  border-radius: 50%;
-  z-index: 10;
-  outline: 6px solid #ccc;
-  outline-offset: -6px;
-  box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.testimonial__nav:checked {
-  -webkit-animation: check 0.4s linear forwards;
-  animation: check 0.4s linear forwards;
-}
-.testimonial__nav:checked:nth-of-type(1) ~ .testimonial__inner {
-  left: 0%;
-}
-.testimonial__nav:checked:nth-of-type(2) ~ .testimonial__inner {
-  left: -100%;
-}
-.testimonial__nav:checked:nth-of-type(3) ~ .testimonial__inner {
-  left: -200%;
-}
-.testimonial__nav:checked:nth-of-type(4) ~ .testimonial__inner {
-  left: -300%;
-}
-.testimonial__nav:checked:nth-of-type(5) ~ .testimonial__inner {
-  left: -400%;
-}
-.testimonial__inner {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 500%;
-  height: auto;
-  -webkit-transition: left 0.4s;
-  transition: left 0.4s;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-}
-.testimonial__contents {
-  height: 100%;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.testimonial__caption {
-  font-size: 14px;
-  color: #111;
-  opacity: .5;
-  font-family: 'Roboto';
-  font-weight: bold;
-}
-.testimonial__txt {
-  font-size: 22px;
-  font-weight: bold;
-  font-family: 'Roboto';
-  line-height: 1.7;
-  color: #111;
-  margin-top: -20px;
-  margin-bottom: 20px;
-  max-width: 750px;
-}
-quote {
-  font-family: 'Arial';
-  font-weight: bold;
-  font-size: 100px;
-  color: #ec2027;
-  margin-bottom: 0;
-}
-
-@-webkit-keyframes check {
-  50% {
-    outline-color: #333;
-    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
-  }
-  100% {
-    outline-color: #333;
-    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  }
-}
-
-@keyframes check {
-  50% {
-    outline-color: #333;
-    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
-  }
-  100% {
-    outline-color: #333;
-    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  }
-}
-
-
-</style>
-
+    </section>
+    <!-- Services -->
     
 
 
