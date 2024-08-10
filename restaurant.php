@@ -40,7 +40,7 @@
                         <?php
 
 // Fetch data from the restaurant table and group by category
-$sql = "SELECT id, title, description, price, category FROM restuarant ORDER BY category DESC";
+$sql = "SELECT id, title, description, price, category FROM restaurant ORDER BY category DESC";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
