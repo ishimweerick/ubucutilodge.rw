@@ -206,11 +206,9 @@ while($row = mysqli_fetch_array($result))
                                 }
                             ?>     
                         </div>
-                        <!-- Navigation Arrows -->
-                        <div class="owl-nav">
-                            <button class="owl-prev">‹</button>
-                            <button class="owl-next">›</button>
-                        </div>
+                        <!-- Custom Red Arrows -->
+                        <button class="custom-nav custom-prev">‹</button>
+                        <button class="custom-nav custom-next">›</button>
                     </div>
                 </div>
             </div>
@@ -231,45 +229,24 @@ while($row = mysqli_fetch_array($result))
 <!-- Initialize Owl Carousel -->
 <script>
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
         loop: true,
         margin: 10,
-        nav: true, // Enable navigation arrows
-        navText: ["‹", "›"], // Customize arrow text
-        items: 1, // Number of items to display
-        dots: false // Hide dots if you only want arrows
+        items: 1,
+        dots: false // Hide the dots
+    });
+
+    // Custom navigation events
+    $(".custom-prev").click(function() {
+        owl.trigger('prev.owl.carousel');
+    });
+
+    $(".custom-next").click(function() {
+        owl.trigger('next.owl.carousel');
     });
 });
 </script>
-
-<!-- Custom CSS for Button-Style Red Arrows -->
-<style>
-.owl-nav button {
-    background-color: red; /* Red background for the buttons */
-    border: none;
-    color: white; /* White arrow color */
-    font-size: 20px;
-    padding: 10px 15px; /* Add padding to make them look like buttons */
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%; /* Make the buttons round */
-}
-
-.owl-prev {
-    left: -50px; /* Position the previous button outside the text */
-}
-
-.owl-next {
-    right: -50px; /* Position the next button outside the text */
-}
-
-.owl-nav button:hover {
-    background-color: darkred; /* Darker red on hover */
-    color: white; /* Ensure text stays white on hover */
-}
-</style>
 
     
 
