@@ -170,7 +170,66 @@ while($row = mysqli_fetch_array($result))
     </section>
    
    
-   <!-- Testimonials -->
+   <script>
+    $(document).ready(function(){
+    var owl = $('.owl-carousel');
+
+    owl.owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false, // Disable default navigation
+        items:1, // Adjust the number of visible items as needed
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
+    });
+
+    // Custom Navigation Events
+    $('.custom-next').click(function() {
+        owl.trigger('next.owl.carousel');
+    });
+    $('.custom-prev').click(function() {
+        owl.trigger('prev.owl.carousel');
+    });
+});
+
+</script>
+<style>
+   /* Custom red arrow buttons */
+.custom-nav {
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 1000; /* Ensures it stays above other content */
+    opacity: 0.9; /* Slight transparency */
+}
+
+/* Positioning of the previous button */
+.custom-prev {
+    left: -20px; /* Adjust the left position to your preference */
+}
+
+/* Positioning of the next button */
+.custom-next {
+    right: -20px; /* Adjust the right position to your preference */
+}
+
+/* Darken the arrows slightly on hover */
+.custom-nav:hover {
+    background-color: darkred;
+    color: white;
+    opacity: 1; /* Full opacity on hover */
+}
+
+</style>
+<!-- Testimonial Section -->
 <section class="testimonials">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
         <div class="container">
@@ -183,28 +242,26 @@ while($row = mysqli_fetch_array($result))
                     <div class="testimonials-box">
                         <div class="owl-carousel owl-theme">
                             <?php
-                                $result = mysqli_query($con, "SELECT * FROM testimony");
-                                if (mysqli_num_rows($result) > 0) {
-                                    $i=0;
-                                    while($row = mysqli_fetch_array($result)) {
-                            ?>
-                            <div class="item"> 
-                                <span>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                </span>
-                                <h5>"<?php echo $row['message']; ?>"</h5>
-                            </div>
-                            <?php
-                                        $i++;
-                                    }
-                                } else {
-                                    echo "No Slide found";
+                            $result = mysqli_query($con, "SELECT * FROM testimony");
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_array($result)) {
+                                    ?>
+                                    <div class="item">
+                                        <span>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                        </span>
+                                        <h5>"<?php echo $row["message"]; ?>"</h5>
+                                    </div>
+                                    <?php
                                 }
-                            ?>     
+                            } else {
+                                echo "No Slide found";
+                            }
+                            ?>
                         </div>
                         <!-- Custom Red Arrows -->
                         <button class="custom-nav custom-prev">‹</button>
@@ -216,37 +273,6 @@ while($row = mysqli_fetch_array($result))
     </div>
 </section>
 
-<!-- jQuery (necessary for Owl Carousel) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<!-- Initialize Owl Carousel -->
-<script>
-$(document).ready(function(){
-    var owl = $(".owl-carousel");
-    owl.owlCarousel({
-        loop: true,
-        margin: 10,
-        items: 1,
-        dots: false // Hide the dots
-    });
-
-    // Custom navigation events
-    $(".custom-prev").click(function() {
-        owl.trigger('prev.owl.carousel');
-    });
-
-    $(".custom-next").click(function() {
-        owl.trigger('next.owl.carousel');
-    });
-});
-</script>
 
     
 
