@@ -36,6 +36,48 @@ while($row = mysqli_fetch_array($result))
     </section>
 
   <!-- Slider -->
+
+
+
+
+<!-- Header Video -->
+<header class="header">
+        <div class="video-fullscreen-wrap">
+            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
+            <div class="video-fullscreen-video" data-overlay-dark="5">
+                <video playsinline="" autoplay="" loop="" muted="">
+                    <source src="https://duruthemes.com/demo/html/patara/hotel.mp4" type="video/mp4" autoplay="" loop="" muted="">
+                    <source src="https://duruthemes.com/demo/html/patara/hotel.webm" type="video/webm" autoplay="" loop="" muted="">
+                </video>
+            </div>
+            <div class="v-middle caption overlay">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7 col-md-12"> <span>
+                                <i class="star-rating"></i>
+                                <i class="star-rating"></i>
+                                <i class="star-rating"></i>
+                                <i class="star-rating"></i>
+                                <i class="star-rating"></i>
+                            </span>
+                            <h4>Best Five-Star Hotel</h4>
+                            <h1>Patara Luxury Hotel</h1>
+                            <div class="butn-light mt-30 mb-30"> <a href="index8.html#"><span>Rooms &amp; Suites</span></a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- button scroll -->
+        <a href="index8.html#" data-scroll-nav="1" class="mouse smoothscroll">
+            <span class="mouse-icon">
+                <span class="mouse-wheel"></span>
+            </span>
+        </a>
+    </header>
+
+
+
  
     <!-- Booking Search -->
 
