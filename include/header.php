@@ -128,14 +128,17 @@ height="0">
                     
                   
                     <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">About Us <i class="ti-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                       
-                            <li lass="dropdown-item"><a href="our-team">Our Team</a></li>
-                            <li lass="dropdown-item"><a  href="restaurant">Our Menu</a></li>
-                        </ul></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="our-team" class="dropdown-item"><span>Our Team</span></a></li>
+                            <li><a href="restaurant" class="dropdown-item"><span>Our Menu</span></a></li>
+                        </ul>
+                    </li>
 
+
+
+
+                   
                         <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Services <i class="ti-angle-down"></i></a>
                     <ul class="dropdown-menu">
                        

@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="section-title">Make it a long weekend focused, solely on you and your loved one.</div>
-                    <div class="butn-dark"> <a href="post.html"><span>Book Now</span></a> </div><br>
+                    <div class="butn-dark"> <a href="contact"><span>Book Now</span></a> </div><br>
 
                     
                 </div>
