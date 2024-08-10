@@ -170,7 +170,7 @@ while($row = mysqli_fetch_array($result))
     </section>
    
    
-  <!-- Testimonials -->
+   <!-- Testimonials -->
 <section class="testimonials">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/rooms/17.jpg" data-overlay-dark="4">
         <div class="container">
@@ -197,16 +197,6 @@ while($row = mysqli_fetch_array($result))
                                     <i class="star-rating"></i>
                                 </span>
                                 <h5>"<?php echo $row['message']; ?>"</h5>
-                                <!-- Uncomment if you want to show author info
-                                <div class="info">
-                                    <div class="author-img">
-                                        <img src="img/team/1.jpg" alt="">
-                                    </div>
-                                    <div class="cont">
-                                        <h6><?php echo $row['name']; ?></h6>
-                                        <span>Customer Review</span>
-                                    </div>
-                                </div> -->
                             </div>
                             <?php
                                         $i++;
@@ -252,15 +242,33 @@ $(document).ready(function(){
 });
 </script>
 
+<!-- Custom CSS for Red Arrows -->
+<style>
+.owl-nav button {
+    background-color: transparent;
+    border: none;
+    color: red; /* Set the arrow color to red */
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+.owl-prev {
+    left: -25px; /* Adjust the position as needed */
+}
 
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+.owl-next {
+    right: -25px; /* Adjust the position as needed */
+}
 
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+.owl-nav button:hover {
+    color: #ff6347; /* Change color on hover (slightly brighter red) */
+}
+</style>
 
+    
 
 
 
