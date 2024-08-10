@@ -209,7 +209,7 @@ while($row = mysqli_fetch_array($result))
                         <!-- Navigation Arrows -->
                         <div class="owl-nav">
                             <button class="owl-prev">‹</button>
-                          
+                            <button class="owl-next">›</button>
                         </div>
                     </div>
                 </div>
@@ -242,29 +242,32 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- Custom CSS for Red Arrows -->
+<!-- Custom CSS for Button-Style Red Arrows -->
 <style>
 .owl-nav button {
-    background-color: transparent;
+    background-color: red; /* Red background for the buttons */
     border: none;
-    color: red; /* Set the arrow color to red */
-    font-size: 24px;
+    color: white; /* White arrow color */
+    font-size: 20px;
+    padding: 10px 15px; /* Add padding to make them look like buttons */
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 50%; /* Make the buttons round */
 }
 
 .owl-prev {
-    left: -25px; /* Adjust the position as needed */
+    left: -50px; /* Position the previous button outside the text */
 }
 
 .owl-next {
-    right: -25px; /* Adjust the position as needed */
+    right: -50px; /* Position the next button outside the text */
 }
 
 .owl-nav button:hover {
-    color: #ff6347; /* Change color on hover (slightly brighter red) */
+    background-color: darkred; /* Darker red on hover */
+    color: white; /* Ensure text stays white on hover */
 }
 </style>
 
