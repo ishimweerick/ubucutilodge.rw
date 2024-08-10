@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
         echo '<div class="menu-list mb-30">';
         echo '<div class="item">';
         echo '<div class="flex">';
-        echo '<div class="title">' . htmlspecialchars($row['title']) . '</div>';
+        echo '<div class="title">' . ucwords(htmlspecialchars($row['title'])) . '</div>';
         echo '<div class="dots"></div>';
         echo '<div class="price">' . number_format($row['price'], 0) . ' RWF</div>';
         echo '</div>';
