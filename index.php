@@ -275,44 +275,43 @@ while($row = mysqli_fetch_array($result))
 
 
 
-
 <div class="testimonials-section">
-    <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
-    <input type="radio" name="slider" title="slide2" class="slider__nav"/>
-    <input type="radio" name="slider" title="slide3" class="slider__nav"/>
-    <input type="radio" name="slider" title="slide4" class="slider__nav"/>
-    <input type="radio" name="slider" title="slide5" class="slider__nav"/>
-  <div class="slider__inner">
-    <div class="slider__contents">
+    <input type="radio" name="slider" title="slide1" checked="checked" class="testimonial__nav"/>
+    <input type="radio" name="slider" title="slide2" class="testimonial__nav"/>
+    <input type="radio" name="slider" title="slide3" class="testimonial__nav"/>
+    <input type="radio" name="slider" title="slide4" class="testimonial__nav"/>
+    <input type="radio" name="slider" title="slide5" class="testimonial__nav"/>
+  <div class="testimonial__inner">
+    <div class="testimonial__contents">
       <quote>&rdquo;</quote>
-      <p class="slider__txt">We love you guys. It's easy to order, we get shipments quick and my rep solves tough problems the right way. We get answers that work.</p>
-      <h2 class="slider__caption">Rhonda | NylonCraft</h2>
+      <p class="testimonial__txt">We love you guys. It's easy to order, we get shipments quick and my rep solves tough problems the right way. We get answers that work.</p>
+      <h2 class="testimonial__caption">Rhonda | NylonCraft</h2>
     </div>
-    <div class="slider__contents">
+    <div class="testimonial__contents">
       <quote>&rdquo;</quote>
-      <p class="slider__txt">You all bend over backwards to get it done. Inside sales and the Account Managers are great! It's your service...you all know that it's not just about taking orders it's about service. Why do we choose you guys - your people, your prices, you're quick and you have a ton of technical knowledge.</p>
-      <h2 class="slider__caption">Jared | Rexam</h2>
+      <p class="testimonial__txt">You all bend over backwards to get it done. Inside sales and the Account Managers are great! It's your service...you all know that it's not just about taking orders it's about service. Why do we choose you guys - your people, your prices, you're quick and you have a ton of technical knowledge.</p>
+      <h2 class="testimonial__caption">Jared | Rexam</h2>
     </div>
-    <div class="slider__contents">
+    <div class="testimonial__contents">
       <quote>&rdquo;</quote>
-      <p class="slider__txt">It's the long-term relationship we have with Proheat that keeps me calling you guys. I trust you, you're quick, and everybody I've ever spoken to there are all great people. Our CEO, Bill, talks about building relationships. That's exactly what Proheat does, and I couldn't be happier.</p>
-      <h2 class="slider__caption">Chris | C&M Fine Pack</h2>
+      <p class="testimonial__txt">It's the long-term relationship we have with Proheat that keeps me calling you guys. I trust you, you're quick, and everybody I've ever spoken to there are all great people. Our CEO, Bill, talks about building relationships. That's exactly what Proheat does, and I couldn't be happier.</p>
+      <h2 class="testimonial__caption">Chris | C&M Fine Pack</h2>
     </div>
-    <div class="slider__contents">
+    <div class="testimonial__contents">
       <quote>&rdquo;</quote>
-      <p class="slider__txt">You answer my questions, always takes care of problems, and I never have a hassle.</p>
-      <h2 class="slider__caption">Rex | LNP Engineering Plastics</h2>
+      <p class="testimonial__txt">You answer my questions, always takes care of problems, and I never have a hassle.</p>
+      <h2 class="testimonial__caption">Rex | LNP Engineering Plastics</h2>
     </div>
-    <div class="slider__contents">
+    <div class="testimonial__contents">
       <quote>&rdquo;</quote>
-      <p class="slider__txt">Proheat's staff are all so friendly and everybody goes above and beyond. Everyone is courteous, everything is quick and you get us what we need. I have to shop around for everything and we ALWAYS come back to Proheat.</p>
-      <h2 class="slider__caption">Darlene | Russel Stover</h2>
+      <p class="testimonial__txt">Proheat's staff are all so friendly and everybody goes above and beyond. Everyone is courteous, everything is quick and you get us what we need. I have to shop around for everything and we ALWAYS come back to Proheat.</p>
+      <h2 class="testimonial__caption">Darlene | Russel Stover</h2>
     </div>
   </div>
 </div>
 
 <style>
-    *, *:before, *:after {
+  *, *:before, *:after {
   box-sizing: border-box;
 }
 html, body {
@@ -339,7 +338,7 @@ html, body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.slider__nav {
+.testimonial__nav {
   width: 12px;
   height: 12px;
   margin: 80px 12px;
@@ -355,26 +354,26 @@ html, body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.slider__nav:checked {
+.testimonial__nav:checked {
   -webkit-animation: check 0.4s linear forwards;
   animation: check 0.4s linear forwards;
 }
-.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+.testimonial__nav:checked:nth-of-type(1) ~ .testimonial__inner {
   left: 0%;
 }
-.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+.testimonial__nav:checked:nth-of-type(2) ~ .testimonial__inner {
   left: -100%;
 }
-.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+.testimonial__nav:checked:nth-of-type(3) ~ .testimonial__inner {
   left: -200%;
 }
-.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+.testimonial__nav:checked:nth-of-type(4) ~ .testimonial__inner {
   left: -300%;
 }
-.slider__nav:checked:nth-of-type(5) ~ .slider__inner {
+.testimonial__nav:checked:nth-of-type(5) ~ .testimonial__inner {
   left: -400%;
 }
-.slider__inner {
+.testimonial__inner {
   position: absolute;
   top: 80px;
   left: 0;
@@ -390,7 +389,7 @@ html, body {
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
 }
-.slider__contents {
+.testimonial__contents {
   height: 100%;
   text-align: center;
   display: -webkit-box;
@@ -413,14 +412,14 @@ html, body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.slider__caption {
+.testimonial__caption {
   font-size: 14px;
   color: #111;
   opacity: .5;
   font-family: 'Roboto';
   font-weight: bold;
 }
-.slider__txt {
+.testimonial__txt {
   font-size: 22px;
   font-weight: bold;
   font-family: 'Roboto';
@@ -459,6 +458,7 @@ quote {
     box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
   }
 }
+
 
 </style>
 
