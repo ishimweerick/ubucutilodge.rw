@@ -28,7 +28,7 @@
                             <!-- Rating -->
 
                             <div class="col-md-12">
-                            <h6>On Booking</h6>
+                            <h6>Rates on booking.com</h6>
                             <ul class="list-unstyled page-list mb-30">
                                 <li>
                                     <div class="page-list-icon"> <span class="ti-time"></span> </div>
