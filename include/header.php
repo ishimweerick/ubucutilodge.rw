@@ -140,7 +140,7 @@ height="0">
 
                    
                         <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="about" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Services <i class="ti-angle-down"></i></a>
-                    <ul class="dropdown-menu">aundry service
+                    <ul class="dropdown-menu">
                        
                             <li lass="dropdown-item" style="color:#000"><a href="wellness">Wellness</a></li>
                             <li lass="dropdown-item" style="color:#000"><a href="#">Laundry service</a></li>
