@@ -143,7 +143,7 @@ height="0">
                     <ul class="dropdown-menu">
                        
                             <li lass="dropdown-item" style="color:#000"><a href="wellness">Wellness</a></li>
-                            <li lass="dropdown-item" style="color:#000"><a href="#">Laundry service</a></li>
+                            <li lass="dropdown-item" style="color:#000"><a href="laundry">Laundry service</a></li>
                             <li lass="dropdown-item"><a href="amenities">Our Amenities</a></li>
                             <li class="nav-item dropdown"> <a class="dropdown-toggle" href="index.html#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Promotions <i class="ti-angle-down"></i></a>
                         <ul class="dropdown-menu">
