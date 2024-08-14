@@ -33,7 +33,7 @@
                                 <li>
                                     <div class="page-list-icon"> <span class="ti-time"></span> </div>
                                     <div class="page-list-text">
-                                        <p>Ubucuti Lodge | 9.4</p>
+                                        <p>Ubucuti Lodge | 9.5</p>
                                     </div>
                                 </li>
                                 <li>
