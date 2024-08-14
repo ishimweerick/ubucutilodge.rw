@@ -63,7 +63,7 @@ while($row = mysqli_fetch_array($result))
                         </div>
                     </div>
                 </div><div class="col-md-3">
-                    <div class="sub-title border-bot-light">But rates on booking.com</div>
+                    <div class="sub-title border-bot-light">Rates on booking.com</div>
                 </div>
                 <div class="row mb-30">
                                 <div class="col-lg-4 col-md-12">
