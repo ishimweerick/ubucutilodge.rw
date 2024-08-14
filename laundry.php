@@ -33,14 +33,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Shirt (short sleeves)</td>
+                                <td>Shirt (Short Sleeves)</td>
                                 <td>1.5</td>
                                 <td></td>
                                 <td>Blouse</td>
                                 <td>2.5</td>
                             </tr>
                             <tr>
-                                <td>Shirt (Long sleeves)</td>
+                                <td>Shirt (Long Sleeves)</td>
                                 <td>2</td>
                                 <td></td>
                                 <td>Skirt</td>
