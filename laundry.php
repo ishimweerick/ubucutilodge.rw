@@ -24,186 +24,111 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No of Items</th>
-                                <th>Hand Wash</th>
                                 <th>Gentlemens</th>
                                 <th>Unit Price $</th>
-                                <th>Amount</th>
-                                <th>No of Items</th>
-                                <th>Hand Wash</th>
+                                <th></th>
                                 <th>Ladies</th>
                                 <th>Unit Price $</th>
-                                <th>Amount</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Shirt (short sleeves)</td>
                                 <td>1.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Blouse</td>
                                 <td>2.5</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Shirt (Long sleeves)</td>
                                 <td>2</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Skirt</td>
                                 <td>2.5</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Under shirts</td>
                                 <td>0.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Dresses</td>
                                 <td>4</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Under Shorts</td>
                                 <td>0.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Pajamas</td>
                                 <td>3</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Pajamas</td>
                                 <td>3</td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td>Night Gowns</td>
                                 <td>4</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Socks</td>
                                 <td>0.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Slips</td>
                                 <td>0.5</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Handkerchiefs</td>
                                 <td>0.5</td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td>Panties</td>
                                 <td>0.5</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Trousers</td>
                                 <td>3</td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td>Handkerchiefs</td>
                                 <td>0.5</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Jeans</td>
                                 <td>2</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Jeans</td>
                                 <td>2</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Jackets</td>
                                 <td>4</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Trousers</td>
                                 <td>3</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Shorts</td>
                                 <td>2</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Bra</td>
                                 <td>1</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>T-Shirt</td>
                                 <td>1.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Bikini</td>
                                 <td>2</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
                                 <td>Swimming Short</td>
                                 <td>1.5</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td>Scarf</td>
                                 <td>2</td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>Short</td>
                                 <td>2</td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
