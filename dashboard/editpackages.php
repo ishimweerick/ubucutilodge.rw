@@ -181,68 +181,103 @@ if (isset($_GET['delete_image_id'])) {
 
           <div class="col-lg-12">
             <div class="mb-3">
-              <label for="packageDescription" class="form-label">Package Description</label>
-              <textarea name="package_description" id="packageDescription" class="summernote form-control" style="color:#fff" required><?php echo htmlspecialchars($package['package_description']); ?></textarea>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="mb-3">
-              <label for="packageCategory" class="form-label">Package Category</label>
-              <select class="form-control" id="packageCategory" name="package_category">
-                <?php
-                // Fetch categories
-                $query = mysqli_query($con, "SELECT id, cat_name FROM packages_category");
-                while ($row = mysqli_fetch_assoc($query)) {
-                    $selected = $row['id'] == $package['package_category'] ? 'selected' : '';
-                    echo "<option value='" . $row['id'] . "' $selected>" . $row['cat_name'] . "</option>";
-                }
-                ?>
+              <label for="packageCategory" class="form-label">Category</label>
+              <select class="form-select" id="packageCategory" name="package_category">
+                <option value="Single" <?php if ($package['package_category'] == 'Single') echo 'selected'; ?>>Single</option>
+                <option value="Family" <?php if ($package['package_category'] == 'Family') echo 'selected'; ?>>Family</option>
+                <option value="Group" <?php if ($package['package_category'] == 'Group') echo 'selected'; ?>>Group</option>
               </select>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="mb-3">
-              <label for="priceWeekend" class="form-label">Weekend Price</label>
-              <input type="text" class="form-control" id="priceWeekend" name="price_weekend" value="<?php echo htmlspecialchars($package['price_weekend']); ?>" placeholder="Enter Weekend Price">
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="mb-3">
-              <label for="priceWeekday" class="form-label">Weekday Price</label>
-              <input type="text" class="form-control" id="priceWeekday" name="price_weekday" value="<?php echo htmlspecialchars($package['price_weekday']); ?>" placeholder="Enter Weekday Price">
-            </div>
-          </div>
-
           <div class="col-lg-12">
-            <div class="hstack gap-2 justify-content-end">
-              <button type="submit" name="save" class="btn btn-primary">Save Changes</button>
+            <div class="mb-3">
+              <label for="packageDescription" class="form-label">Package Description</label>
+              <textarea class="form-control" id="packageDescription" name="package_description" rows="5" placeholder="Enter Package Description"><?php echo htmlspecialchars($package['package_description']); ?></textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label for="priceWeekend" class="form-label">Price (Weekend)</label>
+              <input type="text" class="form-control" id="priceWeekend" name="price_weekend" value="<?php echo htmlspecialchars($package['price_weekend']); ?>" placeholder="Enter Price for Weekend">
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label for="priceWeekday" class="form-label">Price (Weekday)</label>
+              <input type="text" class="form-control" id="priceWeekday" name="price_weekday" value="<?php echo htmlspecialchars($package['price_weekday']); ?>" placeholder="Enter Price for Weekday">
             </div>
           </div>
         </div>
+        <button type="submit" name="save" class="btn btn-primary">Save Changes</button>
       </form>
+
+      <!-- Reorder Images Section -->
+      <div class="col-lg-12">
+        <div class="gallery">
+          <ul class="reorder_ul reorder-photos-list">
+            <?php
+            $query = mysqli_query($con, "SELECT * FROM photo WHERE package_id='$todo' ORDER BY img_order ASC");
+            while ($row = mysqli_fetch_array($query)) {
+                echo '<li id="image_li_' . $row['photoid'] . '" class="ui-sortable-handle">';
+                echo '<a href="javascript:void(0);" class="image_link">';
+                echo '<img src="' . $row['location'] . '" alt="image" height="150px" width="150px">';
+                echo '<a href="editpackages.php?delete_image_id=' . $row['photoid'] . '&package_id=' . $todo . '" style="position:absolute;top:0;right:0;background:red;color:white;padding:5px;">Delete</a>';
+                echo '</a></li>';
+            }
+            ?>
+          </ul>
+          <div id="reorderHelper" class="light_box" style="display:none;">
+            1. Drag photos to reorder.<br>2. Click 'Save Reordering' when finished.
+          </div>
+          <a href="javascript:void(0);" class="reorder_link" id="saveReorder">Reorder Photos</a>
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
 
-<script>
-  $('.summernote').summernote({
-    placeholder: 'Create your content here.',
-    tabsize: 5,
-    height: '50vh',
-    toolbar: [
-      ['style', ['style']],
-      ['font', ['bold', 'underline', 'clear']],
-      ['color', ['color']],
-      ['para', ['ul', 'ol', 'paragraph']],
-      ['table', ['table']],
-      ['insert', ['link', 'picture', 'video']],
-      ['view', ['fullscreen', 'codeview', 'help']]
-    ]
-  });
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.reorder_link').on('click',function(){
+        $("ul.reorder-photos-list").sortable({ tolerance: 'pointer' });
+        $('.reorder_link').html('Save Reordering');
+        $('.reorder_link').attr("id","saveReorder");
+        $('#reorderHelper').slideDown('slow');
+        $('.image_link').css("cursor","move");
+
+        $("#saveReorder").click(function( e ){
+            if(!$("#saveReorder i").length){
+                $(this).html('').prepend('<img src="images/refresh-animated.gif"/>');
+                $("ul.reorder-photos-list").sortable('destroy');
+                $("#reorderHelper").html("Reordering Photos - This could take a moment. Please don't navigate away from this page.").removeClass('light_box').addClass('notice notice_error');
+
+                var h = [];
+                $("ul.reorder-photos-list li").each(function() {
+                    h.push($(this).attr('id').substr(9));
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "orderUpdate.php",
+                    data: {ids: h.join(",")},
+                    success: function(){
+                        window.location.reload();
+                    }
+                });
+                return false;
+            }
+            e.preventDefault();
+        });
+    });
+});
 </script>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
 
 <?php include "footer.php"; ?>
